@@ -7,13 +7,14 @@ interface Props {
   numberLabel: string;
   extraClass?: string;
   labelSub?: string;
-  toneClass?: string; // 'tone-ivory' for the lighter grain plate, omit for the dark one
+  toneClass?: string;
 }
 
 const { project, numberLabel, extraClass = '', labelSub = 'Placeholder', toneClass = '' } = Astro.props;
 const { title, coverImage, category } = project.data;
+const href = `/project/${project.slug}/`;
 ---
-<div class={`work-item ${extraClass}`}>
+<a class={`work-item project-link ${extraClass}`} href={href} aria-label={`View ${title}`}>
   <div class={`plate ${toneClass}`}>
     <img
       class="plate-scale cover-img"
@@ -33,4 +34,4 @@ const { title, coverImage, category } = project.data;
     <span class="title">{title}</span>
     <span class="cat">{categoryLabel(category)}</span>
   </div>
-</div>
+</a>

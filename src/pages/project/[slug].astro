@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { categoryLabel } from '../../lib/categories';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', ({ data }) => data.published);
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { title, description, category, year, coverImage, gallery, video } = project.data;
+const hasUploadedVideo = video?.sourceType === 'upload' && video?.file;
+const hasExternalVideo = video?.sourceType === 'external' && video?.externalUrl;
+---
+<BaseLayout title={`${title} — Oksana`} description={description}>
+  <main class="project-detail">
+    <section class="project-detail-hero wrap">
+      <a class="project-back" href={`/work/${category}/`}>← {categoryLabel(category)}</a>
+      <div class="project-detail-head">
+        <p class="eyebrow">{year ? `${year} — ` : ''}{categoryLabel(category)}</p>
+        <h1 class="project-detail-title">{title}</h1>
+        <p class="project-detail-description">{description}</p>
+      </div>
+      <figure class="project-cover">
+        <img src={coverImage} alt={title} />
+      </figure>
+    </section>
+
+    {gallery?.length > 0 && (
+      <section class="project-gallery wrap" aria-label={`${title} gallery`}>
+        {gallery.filter(Boolean).map((image, i) => (
+          <figure class={`project-gallery-item ${i % 3 === 0 ? 'project-gallery-wide' : ''}`}>
+            <img src={image} alt={`${title} — image ${i + 1}`} loading="lazy" />
+          </figure>
+        ))}
+      </section>
+    )}
+
+    {(hasUploadedVideo || hasExternalVideo) && (
+      <section class="project-video wrap">
+        {hasUploadedVideo ? (
+          <video controls playsinline preload="metadata" poster={video?.poster || coverImage}>
+            <source src={video!.file} />
+          </video>
+        ) : (
+          <div class="project-external-video">
+            <a href={video!.externalUrl} target="_blank" rel="noopener">Watch video ↗</a>
+            {video?.poster && <img src={video.poster} alt={`${title} video poster`} loading="lazy" />}
+          </div>
+        )}
+      </section>
+    )}
+  </main>
+</BaseLayout>

@@ -1,16 +1,8 @@
-# CloudCannon site configuration
-# Docs: https://cloudcannon.com/documentation/articles/configuration-file-overview/
-#
-# This file controls what a non-technical editor sees in the CloudCannon
-# dashboard: section names, field labels, image pickers, dropdowns and
-# toggles. It does not affect how the site looks — only how it's edited.
-
+# CloudCannon configuration for Oksana Portfolio
 source: /
 base_url:
 
 collections_config:
-
-  # ---------------------------------------------------------------
   projects:
     path: src/content/projects
     name: Projects
@@ -18,8 +10,9 @@ collections_config:
     singular_name: Project
     disable_add: false
     disable_add_folder: true
-    paths: 
-      uploads: /uploads/projects/
+    paths:
+      uploads: public/uploads/projects
+      static: public
     _inputs:
       title:
         type: text
@@ -49,19 +42,15 @@ collections_config:
       coverImage:
         type: image
         label: Cover Image
-        options:
-          uploads_dir: uploads/projects
       coverOrientation:
         type: select
         label: Cover Image Shape
         options: [landscape, portrait, square, wide]
-      gallery: 
+      gallery:
         type: array
         label: Gallery Images
       gallery[*]:
         type: image
-      options:
-        uploads_dir: uploads/projects
       video:
         type: object
         label: Video
@@ -74,16 +63,12 @@ collections_config:
             file:
               type: file
               label: Uploaded Video File
-              options:
-                uploads_dir: uploads/projects
             externalUrl:
               type: text
               label: External Video URL (YouTube, Vimeo, etc.)
             poster:
               type: image
               label: Video Poster / Thumbnail
-              options:
-                uploads_dir: uploads/projects
       order:
         type: number
         label: Display Order
@@ -101,13 +86,15 @@ collections_config:
       subtext: category
       image: coverImage
 
-  # ---------------------------------------------------------------
   homepage:
     path: src/content/homepage
     name: Homepage
     icon: home
     disable_add: true
     disable_file_actions: true
+    paths:
+      uploads: public/uploads/hero
+      static: public
     _inputs:
       heroEyebrow:
         type: text
@@ -123,21 +110,15 @@ collections_config:
             enabled:
               type: switch
               label: Enable Showreel Video
-              comment: When off, the hero shows the elegant placeholder instead.
             video:
               type: file
               label: Showreel Video File
-              options:
-                uploads_dir: uploads/hero
             poster:
               type: image
               label: Showreel Poster Image
-              options:
-                uploads_dir: uploads/hero
       selectedWorkHeading:
         type: textarea
         label: Selected Work Heading
-        comment: Keep the line break to match the two-line title style.
       selectedWorkNote:
         type: textarea
         label: Selected Work Description
@@ -156,8 +137,8 @@ collections_config:
       services:
         type: array
         label: Services List
-        options:
-          subtype: text
+      services[*]:
+        type: text
       ctaHeading:
         type: textarea
         label: Final CTA Heading
@@ -165,13 +146,15 @@ collections_config:
         type: text
         label: Final CTA Subtitle
 
-  # ---------------------------------------------------------------
   about:
     path: src/content/about
     name: About
     icon: person
     disable_add: true
     disable_file_actions: true
+    paths:
+      uploads: public/uploads/about
+      static: public
     _inputs:
       eyebrow:
         type: text
@@ -185,16 +168,16 @@ collections_config:
       portraitImage:
         type: image
         label: Portrait Image
-        options:
-          uploads_dir: uploads/about
 
-  # ---------------------------------------------------------------
   settings:
     path: src/content/settings
     name: Site Settings
     icon: settings
     disable_add: true
     disable_file_actions: true
+    paths:
+      uploads: public/uploads/social
+      static: public
     _inputs:
       name:
         type: text
@@ -205,7 +188,6 @@ collections_config:
       instagramUrl:
         type: text
         label: Instagram URL
-        comment: Used by the Contact section and is available site-wide.
       email:
         type: text
         label: Email Address
@@ -224,10 +206,7 @@ collections_config:
       socialImage:
         type: image
         label: Social Sharing Image
-        options:
-          uploads_dir: uploads/social
 
-# -------------------------------------------------------------------
 paths:
   uploads: public/uploads
   static: public
