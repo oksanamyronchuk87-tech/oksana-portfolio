@@ -9,6 +9,7 @@ coverImage: /uploads/projects/img-1190-велике.png
 coverOrientation: landscape
 gallery:
   - /uploads/projects/img-1190.png
+  -
 order: 1
 featured: true
 published: true
