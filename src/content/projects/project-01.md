@@ -7,7 +7,8 @@ category: product-photography
 year: '2026'
 coverImage: /uploads/projects/img-1190-велике.png
 coverOrientation: landscape
-gallery: []
+gallery:
+  - /uploads/img-1194.png
 order: 1
 featured: true
 published: true
