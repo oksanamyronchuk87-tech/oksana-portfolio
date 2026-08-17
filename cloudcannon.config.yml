@@ -58,7 +58,7 @@ collections_config:
         label: Gallery Images
         options:
           subtype: image
-          uploads_dir: uploads/projects
+      
       video:
         type: object
         label: Video
