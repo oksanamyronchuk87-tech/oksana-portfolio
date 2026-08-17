@@ -18,6 +18,8 @@ collections_config:
     singular_name: Project
     disable_add: false
     disable_add_folder: true
+    paths: 
+      uploads: /uploads/projects/
     _inputs:
       title:
         type: text
