@@ -11,7 +11,7 @@ collections_config:
     disable_add: false
     disable_add_folder: true
     paths:
-      uploads: public/uploads/projects
+      uploads: /public/uploads/projects
       static: public
     _inputs:
       title:
