@@ -60,7 +60,8 @@ collections_config:
         label: Gallery Images
       gallery[*]:
         type: image
-      
+      options:
+        uploads_dir: uploads/projects
       video:
         type: object
         label: Video
