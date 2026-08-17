@@ -56,7 +56,7 @@ collections_config:
       gallery: 
         type: array
         label: Gallery Images
-        gallery[*]:
+      gallery[*]:
         type: image
       
       video:
