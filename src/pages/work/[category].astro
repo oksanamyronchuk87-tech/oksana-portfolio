@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { CATEGORIES } from '../../lib/categories';
+
+export async function getStaticPaths() {
+  return CATEGORIES.map((cat) => ({
+    params: { category: cat.slug },
+    props: { cat },
+  }));
+}
+
+const { cat } = Astro.props;
+
+const allProjects = await getCollection('projects');
+const projects = allProjects
+  .filter((p) => p.data.published && p.data.category === cat.slug)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title={`${cat.name} — Oksana`}>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow" style="margin-bottom:1rem;">{cat.index} — Portfolio</p>
+          <h1 class="section-title">{cat.name}</h1>
+        </div>
+        <a href="/#categories" class="hero-cta" style="color:var(--ink);">
+          <span class="ring" style="border-color:var(--ivory-line);">←</span>
+          All Categories
+        </a>
+      </div>
+
+      {projects.length === 0 ? (
+        <p class="section-note">No published projects in this category yet.</p>
+      ) : (
+        <div class="project-grid">
+          {projects.map((project, i) => (
+            <ProjectCard
+              project={project}
+              numberLabel={`N°${String(i + 1).padStart(2, '0')}`}
+              extraClass="reveal"
+              labelSub="Project Image"
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

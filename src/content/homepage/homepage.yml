@@ -1,0 +1,27 @@
+heroEyebrow: "Commercial AI Photography & Video"
+heroSubtitle: "Commercial AI photography & video for brands."
+heroShowreel:
+  enabled: false
+  video: ""
+  poster: ""
+
+selectedWorkHeading: "Selected\nWork"
+selectedWorkNote: "A curated set of commercial photography and video projects. Real work will replace these placeholders."
+
+categoryHeading: "Explore by\nCategory"
+categoryNote: "Each category opens into its own portfolio page."
+
+servicesEyebrow: "What I Create"
+servicesIntro: "Concept-to-delivery visual production for brands, built with modern generative tools."
+services:
+  - "AI Photography"
+  - "AI Video Production"
+  - "Product Visualization"
+  - "Fashion Campaigns"
+  - "Lifestyle Content"
+  - "UGC"
+  - "AI Avatars"
+  - "3D / CGI Content"
+
+ctaHeading: "Have a project\nin mind?"
+ctaSubtitle: "Let's create something people remember."

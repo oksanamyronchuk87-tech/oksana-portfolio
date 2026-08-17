@@ -1,0 +1,231 @@
+# CloudCannon site configuration
+# Docs: https://cloudcannon.com/documentation/articles/configuration-file-overview/
+#
+# This file controls what a non-technical editor sees in the CloudCannon
+# dashboard: section names, field labels, image pickers, dropdowns and
+# toggles. It does not affect how the site looks — only how it's edited.
+
+source: /
+base_url:
+
+collections_config:
+
+  # ---------------------------------------------------------------
+  projects:
+    path: src/content/projects
+    name: Projects
+    icon: photo_library
+    singular_name: Project
+    disable_add: false
+    disable_add_folder: true
+    _inputs:
+      title:
+        type: text
+        label: Project Title
+      description:
+        type: textarea
+        label: Short Description
+      category:
+        type: select
+        label: Category
+        options:
+          - value: product-photography
+            label: AI Product Photography
+          - value: lifestyle-campaigns
+            label: Lifestyle & Campaigns
+          - value: fashion
+            label: Fashion
+          - value: ai-video
+            label: AI Video
+          - value: ugc-avatars
+            label: UGC & AI Avatars
+          - value: cgi-video
+            label: 3D / CGI Video
+      year:
+        type: text
+        label: Year
+      coverImage:
+        type: image
+        label: Cover Image
+        options:
+          uploads_dir: uploads/projects
+      coverOrientation:
+        type: select
+        label: Cover Image Shape
+        options: [landscape, portrait, square, wide]
+      gallery:
+        type: array
+        label: Gallery Images
+        options:
+          subtype: image
+          uploads_dir: uploads/projects
+      video:
+        type: object
+        label: Video
+        options:
+          subfields:
+            sourceType:
+              type: select
+              label: Video Source
+              options: [upload, external]
+            file:
+              type: file
+              label: Uploaded Video File
+              options:
+                uploads_dir: uploads/projects
+            externalUrl:
+              type: text
+              label: External Video URL (YouTube, Vimeo, etc.)
+            poster:
+              type: image
+              label: Video Poster / Thumbnail
+              options:
+                uploads_dir: uploads/projects
+      order:
+        type: number
+        label: Display Order
+        comment: Lower numbers appear first, both in Selected Work and on the category page.
+      featured:
+        type: switch
+        label: Show in Selected Work
+        comment: Selected Work shows up to 6 projects with this switched on, by Display Order.
+      published:
+        type: switch
+        label: Published
+        comment: Turn off to hide this project from the whole site without deleting it.
+    view:
+      name: title
+      subtext: category
+      image: coverImage
+
+  # ---------------------------------------------------------------
+  homepage:
+    path: src/content/homepage
+    name: Homepage
+    icon: home
+    disable_add: true
+    disable_file_actions: true
+    _inputs:
+      heroEyebrow:
+        type: text
+        label: Hero Top Label
+      heroSubtitle:
+        type: text
+        label: Hero Subtitle
+      heroShowreel:
+        type: object
+        label: Hero Showreel Video
+        options:
+          subfields:
+            enabled:
+              type: switch
+              label: Enable Showreel Video
+              comment: When off, the hero shows the elegant placeholder instead.
+            video:
+              type: file
+              label: Showreel Video File
+              options:
+                uploads_dir: uploads/hero
+            poster:
+              type: image
+              label: Showreel Poster Image
+              options:
+                uploads_dir: uploads/hero
+      selectedWorkHeading:
+        type: textarea
+        label: Selected Work Heading
+        comment: Keep the line break to match the two-line title style.
+      selectedWorkNote:
+        type: textarea
+        label: Selected Work Description
+      categoryHeading:
+        type: textarea
+        label: Explore by Category Heading
+      categoryNote:
+        type: textarea
+        label: Explore by Category Description
+      servicesEyebrow:
+        type: text
+        label: Services Section Label
+      servicesIntro:
+        type: textarea
+        label: Services Intro Text
+      services:
+        type: array
+        label: Services List
+        options:
+          subtype: text
+      ctaHeading:
+        type: textarea
+        label: Final CTA Heading
+      ctaSubtitle:
+        type: text
+        label: Final CTA Subtitle
+
+  # ---------------------------------------------------------------
+  about:
+    path: src/content/about
+    name: About
+    icon: person
+    disable_add: true
+    disable_file_actions: true
+    _inputs:
+      eyebrow:
+        type: text
+        label: Section Label
+      lede:
+        type: textarea
+        label: Headline Sentence
+      body:
+        type: textarea
+        label: Body Text
+      portraitImage:
+        type: image
+        label: Portrait Image
+        options:
+          uploads_dir: uploads/about
+
+  # ---------------------------------------------------------------
+  settings:
+    path: src/content/settings
+    name: Site Settings
+    icon: settings
+    disable_add: true
+    disable_file_actions: true
+    _inputs:
+      name:
+        type: text
+        label: Name
+      professionalTitle:
+        type: text
+        label: Professional Title
+      instagramUrl:
+        type: text
+        label: Instagram URL
+        comment: Used by the Contact section and is available site-wide.
+      email:
+        type: text
+        label: Email Address
+      upworkUrl:
+        type: text
+        label: Upwork URL
+      footerYear:
+        type: text
+        label: Footer Year
+      seoTitle:
+        type: text
+        label: SEO Title
+      seoDescription:
+        type: textarea
+        label: SEO Description
+      socialImage:
+        type: image
+        label: Social Sharing Image
+        options:
+          uploads_dir: uploads/social
+
+# -------------------------------------------------------------------
+paths:
+  uploads: public/uploads
+  static: public
+  data: src/content

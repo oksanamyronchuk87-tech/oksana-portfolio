@@ -1,0 +1,34 @@
+---
+interface Props {
+  eyebrow: string;
+  lede: string;
+  body: string;
+  portraitImage: string;
+}
+const { eyebrow, lede, body, portraitImage } = Astro.props;
+---
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="plate reveal">
+        <img
+          class="plate-scale cover-img"
+          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"
+          src={portraitImage}
+          alt="Portrait"
+          loading="lazy"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="plate-label" style="display:none;">
+          <div class="mark">Portrait</div>
+          <div class="sub">4 : 5</div>
+        </div>
+      </div>
+      <div class="about-text reveal reveal-delay-1">
+        <p class="eyebrow">{eyebrow}</p>
+        <p class="about-lede">{lede}</p>
+        <p class="about-body">{body}</p>
+      </div>
+    </div>
+  </div>
+</section>

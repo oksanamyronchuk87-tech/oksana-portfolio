@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Static site — no functions/server needed.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

@@ -1,0 +1,32 @@
+---
+import { CATEGORIES } from '../lib/categories';
+
+interface Props {
+  heading: string;
+  note: string;
+}
+const { heading, note } = Astro.props;
+---
+<section class="section-tight" id="categories">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 class="section-title" style="white-space:pre-line;">{heading}</h2>
+      <p class="section-note">{note}</p>
+    </div>
+  </div>
+
+  <div class="cat-list">
+    {CATEGORIES.map((cat) => (
+      <a class="cat-row reveal" href={`/work/${cat.slug}/`} data-cat={cat.slug}>
+        <div class={`plate ${cat.tone === 'ivory' ? 'tone-ivory' : ''}`}>
+          <div class="plate-scale" style="position:absolute; inset:0;"></div>
+        </div>
+        <div class="wrap cat-row-inner">
+          <span class="cat-index">{cat.index}</span>
+          <span class="cat-name">{cat.name}</span>
+          <span class="cat-view">View →</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { categoryLabel } from '../lib/categories';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  numberLabel: string;
+  extraClass?: string;
+  labelSub?: string;
+  toneClass?: string; // 'tone-ivory' for the lighter grain plate, omit for the dark one
+}
+
+const { project, numberLabel, extraClass = '', labelSub = 'Placeholder', toneClass = '' } = Astro.props;
+const { title, coverImage, category } = project.data;
+---
+<div class={`work-item ${extraClass}`}>
+  <div class={`plate ${toneClass}`}>
+    <img
+      class="plate-scale cover-img"
+      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"
+      src={coverImage}
+      alt={title}
+      loading="lazy"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    />
+    <div class="plate-label" style="display:none;">
+      <div class="mark">Project Image</div>
+      <div class="sub">{labelSub}</div>
+    </div>
+  </div>
+  <div class="work-meta">
+    <span class="num">{numberLabel}</span>
+    <span class="title">{title}</span>
+    <span class="cat">{categoryLabel(category)}</span>
+  </div>
+</div>

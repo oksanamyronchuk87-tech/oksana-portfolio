@@ -1,0 +1,16 @@
+---
+interface Props {
+  settings?: { name: string; professionalTitle: string; footerYear: string };
+}
+const { settings } = Astro.props;
+const name = settings?.name ?? 'Oksana';
+const title = settings?.professionalTitle ?? 'AI Creative';
+const year = settings?.footerYear ?? '2026';
+---
+<footer class="footer">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+    <span class="footer-mark">{name}</span>
+    <span>{title}</span>
+    <span>{year}</span>
+  </div>
+</footer>

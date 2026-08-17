@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from './ProjectCard.astro';
+
+interface Props {
+  heading: string;
+  note: string;
+}
+const { heading, note } = Astro.props;
+
+const allProjects = await getCollection('projects');
+const featured = allProjects
+  .filter((p) => p.data.published && p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 6);
+
+// Fixed six-slot asymmetric mosaic — the approved Selected Work composition.
+// Featured projects fill the slots in CMS "order"; if fewer than six are
+// marked Featured, the later slots are simply omitted.
+const SLOTS = [
+  { cls: 'w1 reveal', sub: 'Landscape' },
+  { cls: 'w2 paired reveal reveal-delay-1', sub: 'Portrait' },
+  { cls: 'w3 paired reveal', sub: 'Portrait' },
+  { cls: 'w4 paired reveal reveal-delay-1', sub: 'Detail' },
+  { cls: 'w5 paired reveal reveal-delay-2', sub: 'Detail' },
+  { cls: 'w6 reveal', sub: 'Wide Cinematic' },
+];
+---
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 class="section-title" style="white-space:pre-line;">{heading}</h2>
+      <p class="section-note">{note}</p>
+    </div>
+
+    <div class="work-grid">
+      {featured.map((project, i) => (
+        <ProjectCard
+          project={project}
+          numberLabel={`N°0${i + 1}`}
+          extraClass={SLOTS[i].cls}
+          labelSub={SLOTS[i].sub}
+        />
+      ))}
+    </div>
+  </div>
+</section>

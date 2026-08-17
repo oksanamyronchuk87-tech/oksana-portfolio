@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import MobileMenu from '../components/MobileMenu.astro';
+import Footer from '../components/Footer.astro';
+import { getEntry } from 'astro:content';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const settings = await getEntry('settings', 'settings');
+const { title, description } = Astro.props;
+
+const pageTitle = title ?? settings?.data.seoTitle;
+const pageDescription = description ?? settings?.data.seoDescription;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
+  {settings?.data.socialImage && <meta property="og:image" content={settings.data.socialImage} />}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,340;1,9..144,440&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <Nav settings={settings?.data} />
+  <MobileMenu />
+
+  <slot />
+
+  <Footer settings={settings?.data} />
+
+  <script>
+    // scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
+    revealEls.forEach((el) => io.observe(el));
+
+    // category rows: hover reveals preview on desktop; tap reveals preview on mobile/touch
+    const catRows = document.querySelectorAll('.cat-row');
+    const isTouch = window.matchMedia('(hover: none)').matches;
+    catRows.forEach((row) => {
+      row.addEventListener('click', (e) => {
+        if (!isTouch) return; // desktop uses :hover, no click interception needed
+        if (!row.classList.contains('is-open')) {
+          e.preventDefault();
+          catRows.forEach((r) => r.classList.remove('is-open'));
+          row.classList.add('is-open');
+        }
+        // second tap on an already-open row proceeds to its category page
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (isTouch && !(e.target as HTMLElement).closest('.cat-row')) {
+        catRows.forEach((r) => r.classList.remove('is-open'));
+      }
+    });
+
+    // mobile menu
+    const menuOpen = document.getElementById('menuOpen');
+    const menuClose = document.getElementById('menuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuOpen?.addEventListener('click', () => mobileMenu?.classList.add('open'));
+    menuClose?.addEventListener('click', () => mobileMenu?.classList.remove('open'));
+    mobileMenu?.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => mobileMenu?.classList.remove('open'));
+    });
+
+    // subtle hero parallax on scroll
+    const heroPlate = document.querySelector('.hero .plate-scale') as HTMLElement | null;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (heroPlate) {
+        heroPlate.style.transform = `scale(${1 + Math.min(y, 600) / 6000}) translateY(${y * 0.08}px)`;
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>

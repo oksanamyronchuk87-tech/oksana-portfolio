@@ -1,0 +1,21 @@
+---
+interface Props {
+  heading: string;
+  subtitle: string;
+  instagramUrl: string;
+  email: string;
+  upworkUrl: string;
+}
+const { heading, subtitle, instagramUrl, email, upworkUrl } = Astro.props;
+---
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="contact-title reveal" style="white-space:pre-line;">{heading}</h2>
+    <p class="contact-sub reveal reveal-delay-1">{subtitle}</p>
+    <div class="contact-links reveal reveal-delay-2">
+      <a href={instagramUrl} target="_blank" rel="noopener">Instagram</a>
+      <a href={`mailto:${email}`}>Email</a>
+      <a href={upworkUrl} target="_blank" rel="noopener">Upwork</a>
+    </div>
+  </div>
+</section>

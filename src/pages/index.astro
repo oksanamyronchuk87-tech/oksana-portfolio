@@ -1,0 +1,37 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SelectedWork from '../components/SelectedWork.astro';
+import Categories from '../components/Categories.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+
+const homepage = await getEntry('homepage', 'homepage');
+const about = await getEntry('about', 'about');
+const settings = await getEntry('settings', 'settings');
+
+const hp = homepage!.data;
+const ab = about!.data;
+const st = settings!.data;
+---
+<BaseLayout>
+  <Hero eyebrow={hp.heroEyebrow} subtitle={hp.heroSubtitle} showreel={hp.heroShowreel} />
+
+  <SelectedWork heading={hp.selectedWorkHeading} note={hp.selectedWorkNote} />
+
+  <Categories heading={hp.categoryHeading} note={hp.categoryNote} />
+
+  <Services eyebrow={hp.servicesEyebrow} intro={hp.servicesIntro} services={hp.services} />
+
+  <About eyebrow={ab.eyebrow} lede={ab.lede} body={ab.body} portraitImage={ab.portraitImage} />
+
+  <Contact
+    heading={hp.ctaHeading}
+    subtitle={hp.ctaSubtitle}
+    instagramUrl={st.instagramUrl}
+    email={st.email}
+    upworkUrl={st.upworkUrl}
+  />
+</BaseLayout>

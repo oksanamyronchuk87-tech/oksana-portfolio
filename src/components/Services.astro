@@ -1,0 +1,23 @@
+---
+interface Props {
+  eyebrow: string;
+  intro: string;
+  services: string[];
+}
+const { eyebrow, intro, services } = Astro.props;
+---
+<section class="section-tight">
+  <div class="wrap">
+    <div class="services">
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:1.2rem;">{eyebrow}</p>
+        <p class="about-body" style="max-width:26ch;">{intro}</p>
+      </div>
+      <div class="services-list reveal reveal-delay-1">
+        {services.map((service) => (
+          <div class="service-item">{service}</div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
