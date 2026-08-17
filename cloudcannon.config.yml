@@ -53,11 +53,11 @@ collections_config:
         type: select
         label: Cover Image Shape
         options: [landscape, portrait, square, wide]
-      gallery: image
+      gallery: 
         type: array
         label: Gallery Images
-        options:
-          subtype: image
+        gallery[*]:
+        type: image
       
       video:
         type: object
