@@ -53,7 +53,7 @@ collections_config:
         type: select
         label: Cover Image Shape
         options: [landscape, portrait, square, wide]
-      gallery:
+      gallery: image
         type: array
         label: Gallery Images
         options:
