@@ -42,6 +42,8 @@ collections_config:
       coverImage:
         type: image
         label: Cover Image
+        options:
+          uploads_dir: /public/uploads/projects
       coverOrientation:
         type: select
         label: Cover Image Shape
