@@ -8,7 +8,7 @@ year: '2026'
 coverImage: /uploads/projects/img-1190-2-велике.jpeg
 coverOrientation: landscape
 gallery:
-  - /uploads/projects/img-1190.png
+  - /uploads/img-1194.png
 order: 1
 featured: true
 published: true
