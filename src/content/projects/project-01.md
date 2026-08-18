@@ -5,7 +5,7 @@ description: >-
   the brand, or the brief.
 category: product-photography
 year: '2026'
-coverImage: /uploads/projects/img-1190-2-велике.jpeg
+coverImage: /uploads/img-1194.png
 coverOrientation: landscape
 gallery:
   - /uploads/img-1194.png
