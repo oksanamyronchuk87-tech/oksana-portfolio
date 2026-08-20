@@ -9,7 +9,7 @@ coverImage: /uploads/projects/img-1304.png
 coverOrientation: landscape
 gallery:
   - /uploads/img-1194.png
-  -
+  
 order: 1
 featured: true
 published: true
