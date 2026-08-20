@@ -24,6 +24,7 @@ collections_config:
         type: select
         label: Category
         options:
+        values:
           - value: product-photography
             label: AI Product Photography
           - value: lifestyle-campaigns
