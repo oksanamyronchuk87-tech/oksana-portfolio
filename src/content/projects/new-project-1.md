@@ -5,10 +5,11 @@ description: >-
   the brand, or the brief.
 category: ''
 year: '2026'
-coverImage: /uploads/img-1194.png
+coverImage: /uploads/projects/img-1304.png
 coverOrientation: landscape
 gallery:
   - /uploads/img-1194.png
+  -
 order: 1
 featured: true
 published: true
