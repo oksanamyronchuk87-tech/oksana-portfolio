@@ -117,15 +117,10 @@ collections_config:
         label: Hero Subtitle
         cascade: true
       heroShowreel:
-        type: object
+        type: file
+        label: Hero Showreel Video
         options:
           required: false
-        label: Hero Showreel Video
-        context:
-          title:
-          icon:
-          content:
-          open:
         cascade: true
       selectedWorkHeading:
         type: textarea
