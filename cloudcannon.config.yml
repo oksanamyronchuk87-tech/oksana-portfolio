@@ -117,14 +117,8 @@ collections_config:
         label: Hero Subtitle
         cascade: true
       heroShowreel:
-        type: file
+        type: object
         options:
-          disable_upload_file: false
-          disable_direct_input: false
-          disable_upload_file_in_file_browser: false
-          resize_style: contain
-          expandable: false
-          prevent_resize_existing_files: false
           required: false
         label: Hero Showreel Video
         context:
