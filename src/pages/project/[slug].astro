@@ -25,9 +25,11 @@ const hasExternalVideo = video?.sourceType === 'external' && video?.externalUrl;
         <h1 class="project-detail-title">{title}</h1>
         <p class="project-detail-description">{description}</p>
       </div>
+    {!hasUploadedVideo && !hasExternalVideo && (
       <figure class="project-cover">
         <img src={coverImage} alt={title} />
       </figure>
+    )}
     </section>
 
     {gallery?.length > 0 && (
@@ -43,7 +45,7 @@ const hasExternalVideo = video?.sourceType === 'external' && video?.externalUrl;
     {(hasUploadedVideo || hasExternalVideo) && (
       <section class="project-video wrap">
         {hasUploadedVideo ? (
-          <video controls playsinline preload="metadata" poster={video?.poster || coverImage}>
+          <video autoplay muted loop playsinline preload="auto">
             <source src={video!.file} />
           </video>
         ) : (
