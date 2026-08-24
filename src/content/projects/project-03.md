@@ -10,8 +10,9 @@ coverImage: /uploads/projects/img-1416.jpeg
 coverOrientation: portrait
 gallery: []
 video:
-  sourceType: external
-  externalUrl: /uploads/copy-ad0c3010-3ee6-49bf-9c0f-3648c7bc8f76.mov
+  sourceType: upload
+  file: /uploads/copy-ad0c3010-3ee6-49bf-9c0f-3648c7bc8f76.mov
+  externalUrl: ''
   poster: /uploads/projects/placeholder-03-cover.jpg
 order: 3
 featured: true
