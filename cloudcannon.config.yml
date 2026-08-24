@@ -1,29 +1,29 @@
-# CloudCannon configuration for Oksana Portfolio
 source: /
-base_url:
-
+paths:
+  uploads: public/uploads
+  static: public
+  data: src/content
 collections_config:
   projects:
     path: src/content/projects
     name: Projects
-    icon: photo_library
     singular_name: Project
-    disable_add: false
-    disable_add_folder: true
-    paths:
-      uploads: /public/uploads/projects
-      static: public
+    icon: photo_library
+    disable_url: false
+    include_developer_files: false
     _inputs:
       title:
         type: text
         label: Project Title
+        cascade: true
       description:
         type: textarea
         label: Short Description
+        cascade: true
       category:
         type: select
         label: Category
-        options:
+        cascade: true
         values:
           - value: product-photography
             label: AI Product Photography
@@ -40,177 +40,213 @@ collections_config:
       year:
         type: text
         label: Year
+        cascade: true
       coverImage:
         type: image
-        label: Cover Image
         options:
-          uploads_dir: /public/uploads/projects
+          disable_upload_file: false
+          disable_direct_input: false
+          disable_upload_file_in_file_browser: false
+          resize_style: contain
+          expandable: false
+          prevent_resize_existing_files: false
+          required: false
+        label: Cover Image
+        cascade: true
       coverOrientation:
         type: select
+        options:
+          - allow_empty: true
+            required: false
+          - allow_empty: true
+            required: false
+          - allow_empty: true
+            required: false
+          - allow_empty: true
+            required: false
         label: Cover Image Shape
-        options: [landscape, portrait, square, wide]
+        cascade: true
       gallery:
         type: array
         label: Gallery Images
+        cascade: true
       gallery[*]:
         type: image
+        cascade: true
       video:
         type: object
-        label: Video
         options:
-          subfields:
-            sourceType:
-              type: select
-              label: Video Source
-              options: [upload, external]
-            file:
-              type: file
-              label: Uploaded Video File
-            externalUrl:
-              type: text
-              label: External Video URL (YouTube, Vimeo, etc.)
-            poster:
-              type: image
-              label: Video Poster / Thumbnail
+          required: false
+        label: Video
+        cascade: true
       order:
         type: number
         label: Display Order
-        comment: Lower numbers appear first, both in Selected Work and on the category page.
+        comment: >-
+          Lower numbers appear first, both in Selected Work and on the category
+          page.
+        cascade: true
       featured:
         type: switch
         label: Show in Selected Work
-        comment: Selected Work shows up to 6 projects with this switched on, by Display Order.
+        comment: >-
+          Selected Work shows up to 6 projects with this switched on, by Display
+          Order.
+        cascade: true
       published:
         type: switch
         label: Published
         comment: Turn off to hide this project from the whole site without deleting it.
-    view:
-      name: title
-      subtext: category
-      image: coverImage
-
+        cascade: true
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
   homepage:
     path: src/content/homepage
     name: Homepage
     icon: home
-    disable_add: true
-    disable_file_actions: true
-    paths:
-      uploads: public/uploads/hero
-      static: public
+    disable_url: false
+    include_developer_files: false
     _inputs:
       heroEyebrow:
         type: text
         label: Hero Top Label
+        cascade: true
       heroSubtitle:
         type: text
         label: Hero Subtitle
+        cascade: true
       heroShowreel:
-        type: object
-        label: Hero Showreel Video
+        type: file
         options:
-          subfields:
-            enabled:
-              type: switch
-              label: Enable Showreel Video
-            video:
-              type: file
-              label: Showreel Video File
-            poster:
-              type: image
-              label: Showreel Poster Image
+          disable_upload_file: false
+          disable_direct_input: false
+          disable_upload_file_in_file_browser: false
+          resize_style: contain
+          expandable: false
+          prevent_resize_existing_files: false
+          required: false
+        label: Hero Showreel Video
+        context:
+          title:
+          icon:
+          content:
+          open:
+        cascade: true
       selectedWorkHeading:
         type: textarea
         label: Selected Work Heading
+        cascade: true
       selectedWorkNote:
         type: textarea
         label: Selected Work Description
+        cascade: true
       categoryHeading:
         type: textarea
         label: Explore by Category Heading
+        cascade: true
       categoryNote:
         type: textarea
         label: Explore by Category Description
+        cascade: true
       servicesEyebrow:
         type: text
         label: Services Section Label
+        cascade: true
       servicesIntro:
         type: textarea
         label: Services Intro Text
+        cascade: true
       services:
         type: array
         label: Services List
+        cascade: true
       services[*]:
         type: text
+        cascade: true
       ctaHeading:
         type: textarea
         label: Final CTA Heading
+        cascade: true
       ctaSubtitle:
         type: text
         label: Final CTA Subtitle
-
+        cascade: true
+      $.heroShowreel:
+        cascade: true
+    disable_add: true
+    disable_add_folder: false
+    disable_file_actions: true
   about:
     path: src/content/about
     name: About
     icon: person
-    disable_add: true
-    disable_file_actions: true
-    paths:
-      uploads: public/uploads/about
-      static: public
+    disable_url: false
+    include_developer_files: false
     _inputs:
       eyebrow:
         type: text
         label: Section Label
+        cascade: true
       lede:
         type: textarea
         label: Headline Sentence
+        cascade: true
       body:
         type: textarea
         label: Body Text
+        cascade: true
       portraitImage:
         type: image
         label: Portrait Image
-
+        cascade: true
+    disable_add: true
+    disable_add_folder: false
+    disable_file_actions: true
   settings:
     path: src/content/settings
     name: Site Settings
     icon: settings
-    disable_add: true
-    disable_file_actions: true
-    paths:
-      uploads: public/uploads/social
-      static: public
+    disable_url: false
+    include_developer_files: false
     _inputs:
       name:
         type: text
         label: Name
+        cascade: true
       professionalTitle:
         type: text
         label: Professional Title
+        cascade: true
       instagramUrl:
         type: text
         label: Instagram URL
+        cascade: true
       email:
         type: text
         label: Email Address
+        cascade: true
       upworkUrl:
         type: text
         label: Upwork URL
+        cascade: true
       footerYear:
         type: text
         label: Footer Year
+        cascade: true
       seoTitle:
         type: text
         label: SEO Title
+        cascade: true
       seoDescription:
         type: textarea
         label: SEO Description
+        cascade: true
       socialImage:
         type: image
         label: Social Sharing Image
-
-paths:
-  uploads: public/uploads
-  static: public
-  data: src/content
+        cascade: true
+    disable_add: true
+    disable_add_folder: false
+    disable_file_actions: true
+timezone: Etc/UTC
