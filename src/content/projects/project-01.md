@@ -3,7 +3,7 @@ title: Project Title
 description: >-
   Short project description goes here — one or two sentences about the concept,
   the brand, or the brief.
-category: ''
+category: product-photography
 year: '2026'
 coverImage: /uploads/img-1194.png
 coverOrientation: landscape
