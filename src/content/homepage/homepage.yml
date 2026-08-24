@@ -1,7 +1,7 @@
 heroEyebrow: "Commercial AI Photography & Video"
 heroSubtitle: "Commercial AI photography & video for brands."
 heroShowreel:
-  enabled: false
+  enabled: true
   video: ""
   poster: ""
 
