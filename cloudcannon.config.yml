@@ -117,11 +117,21 @@ collections_config:
         label: Hero Subtitle
         cascade: true
       heroShowreel:
+        type: object
+        label: Hero Showreel
+        cascace: true
+
+      "$.heroShowreel.video":
         type: file
-        label: Hero Showreel Video
+        label: Hero Showreel video
         options:
           required: false
         cascade: true
+        
+      "$.heroShowreel.poster": 
+        type: image
+        label: Hero Showreel Poster
+        cascace: true
       selectedWorkHeading:
         type: textarea
         label: Selected Work Heading
