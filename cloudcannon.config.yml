@@ -23,7 +23,8 @@ collections_config:
       category:
         type: select
         label: Category
-        potions: 
+        cascade: true
+        potions:
           values:
             - product-photography
             - lifestyle-campaign
@@ -31,7 +32,6 @@ collections_config:
             - ai-video
             - ugc-avatars
             - cgi-video
-        cascade: true
       year:
         type: text
         label: Year
@@ -68,12 +68,6 @@ collections_config:
       gallery[*]:
         type: image
         cascade: true
-      video:
-        type: object
-        options:
-          required: false
-        label: Video
-        cascade: true
       order:
         type: number
         label: Display Order
@@ -90,8 +84,6 @@ collections_config:
         type: switch
         label: Published
         comment: Turn off to hide this project from the whole site without deleting it.
-        cascade: true
-      $.video:
         cascade: true
     disable_add: false
     disable_add_folder: true
