@@ -23,20 +23,15 @@ collections_config:
       category:
         type: select
         label: Category
+        potions: 
+          values:
+            - product-photography
+            - lifestyle-campaign
+            - fashion
+            - ai-video
+            - ugc-avatars
+            - cgi-video
         cascade: true
-        values:
-          - value: product-photography
-            label: AI Product Photography
-          - value: lifestyle-campaigns
-            label: Lifestyle & Campaigns
-          - value: fashion
-            label: Fashion
-          - value: ai-video
-            label: AI Video
-          - value: ugc-avatars
-            label: UGC & AI Avatars
-          - value: cgi-video
-            label: 3D / CGI Video
       year:
         type: text
         label: Year
