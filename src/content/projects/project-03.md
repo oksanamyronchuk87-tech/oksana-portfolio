@@ -1,10 +1,9 @@
 ---
 title: Sculpted in Motion
-description: >-
-  Short project description goes here — one or two AI fashion video exploring
-  sculptural form, movement, and bold design through a cinematic 3D visual
-  experience. sentences about the concept, the brand, or the brief.
-category: ai-video
+description: Short project description goes here — one or two AI fashion video
+  exploring sculptural form, movement, and bold design through a cinematic 3D
+  visual experience. sentences about the concept, the brand, or the brief.
+category: ''
 year: '2026'
 coverImage: /uploads/projects/img-1416.jpeg
 coverOrientation: portrait
