@@ -82,21 +82,21 @@ collections_config:
       order:
         type: number
         label: Display Order
-        comment: >-
-          Lower numbers appear first, both in Selected Work and on the category
+        comment: Lower numbers appear first, both in Selected Work and on the category
           page.
         cascade: true
       featured:
         type: switch
         label: Show in Selected Work
-        comment: >-
-          Selected Work shows up to 6 projects with this switched on, by Display
+        comment: Selected Work shows up to 6 projects with this switched on, by Display
           Order.
         cascade: true
       published:
         type: switch
         label: Published
         comment: Turn off to hide this project from the whole site without deleting it.
+        cascade: true
+      $.video:
         cascade: true
     disable_add: false
     disable_add_folder: true
@@ -119,18 +119,24 @@ collections_config:
       heroShowreel:
         type: object
         label: Hero Showreel
-        cascace: true
-
-      "$.heroShowreel.video":
-        type: file
-        label: Hero Showreel video
-        options:
-          required: false
         cascade: true
-        
-      "$.heroShowreel.poster": 
+        cascace: true
+      $.heroShowreel.video:
+        type: file
+        options:
+          disable_upload_file: false
+          disable_direct_input: false
+          disable_upload_file_in_file_browser: false
+          resize_style: contain
+          expandable: false
+          prevent_resize_existing_files: false
+          required: false
+        label: Hero Showreel video
+        cascade: true
+      $.heroShowreel.poster:
         type: image
         label: Hero Showreel Poster
+        cascade: true
         cascace: true
       selectedWorkHeading:
         type: textarea
