@@ -64,9 +64,24 @@ collections_config:
       gallery:
         type: array
         label: Gallery Images
+        options: 
+          structures:
+            values:
+              - lable: Gallery Image
+                value:
+                  image: ""
+                  title: ""
         cascade: true
-      gallery[*]:
+        
+      gallery[*].image:
         type: image
+        label: Image
+        cascade: true
+        
+         gallery[*].title:
+        type: text
+        label: Photo Title
+        comment: Optional. Leave empty if no caption
         cascade: true
       order:
         type: number
