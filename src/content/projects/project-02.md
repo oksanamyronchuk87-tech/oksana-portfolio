@@ -1,7 +1,8 @@
 ---
-title: Project Title
-description: Short project description goes here — one or two sentences about
-  the concept, the brand, or the brief.
+title: Dior — Where Luxury Takes Root
+description: A visual campaign placing an iconic Dior bag where you least expect
+  it — between water, oversized leaves and raw nature. Luxury taken out of its
+  usual context, while the product remains unmistakably the hero.
 category: fashion
 year: '2026'
 coverImage: /uploads/img-1794.png
@@ -12,6 +13,7 @@ gallery:
   - /uploads/img-1820.png
   - /uploads/img-1818.png
   - /uploads/img-1781.png
+  -
 order: 2
 featured: true
 published: true
