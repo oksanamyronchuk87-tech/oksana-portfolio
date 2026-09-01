@@ -23,15 +23,15 @@ collections_config:
       category:
         type: select
         label: Category
-        cascade: true
-        potions:
+        options:
           values:
             - product-photography
-            - lifestyle-campaign
+            - lifestyle-campaings
             - fashion
             - ai-video
             - ugc-avatars
             - cgi-video
+        cascade: true
       year:
         type: text
         label: Year
