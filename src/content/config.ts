@@ -24,7 +24,17 @@ const projects = defineCollection({
     coverOrientation: z
       .enum(['landscape', 'portrait', 'square', 'wide'])
       .default('portrait'),
-    gallery: z.array(z.string()).default([]),
+    gallery: z
+      .array(
+        z.union([
+          z.string(),
+          z.object({
+            image: z.string(),
+            title: z.string().optional(),
+          }),
+        ])
+       )
+      .default([]),
     video: z
       .object({
         sourceType: z.enum(['upload', 'external']).default('external'),
