@@ -13,7 +13,6 @@ gallery:
   - /uploads/img-1820.png
   - /uploads/img-1818.png
   - /uploads/img-1781.png
-  -
 order: 2
 featured: true
 published: true
