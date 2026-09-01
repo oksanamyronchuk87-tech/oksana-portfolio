@@ -5,7 +5,7 @@ description: A visual campaign placing an iconic Dior bag where you least expect
   usual context, while the product remains unmistakably the hero.
 category: fashion
 year: '2026'
-coverImage: /uploads/img-1083.png
+coverImage: /uploads/img-1794.png
 coverOrientation: portrait
 gallery:
   - /uploads/img-1817.png
