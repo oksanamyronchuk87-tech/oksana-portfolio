@@ -14,7 +14,8 @@ gallery:
   - /uploads/img-1781.png
   - /uploads/img-1820.png
   - /uploads/img-1819.png
-  - /uploads/img-1734-1.webp
+  - image: /uploads/img-1734-1.webp
+  - title: Original Product Reference
 order: 2
 featured: true
 published: true
