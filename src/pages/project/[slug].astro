@@ -10,11 +10,13 @@ export async function getStaticPaths() {
     props: { project },
   }));
 }
+
 const { project } = Astro.props;
 const { title, description, category, year, coverImage, gallery, video } = project.data;
 const hasUploadedVideo = video?.sourceType === 'upload' && video?.file;
 const hasExternalVideo = video?.sourceType === 'external' && video?.externalUrl;
 ---
+
 <BaseLayout title={`${title} — Oksana`} description={description}>
   <main class="project-detail">
     <section class="project-detail-hero wrap">
@@ -24,24 +26,19 @@ const hasExternalVideo = video?.sourceType === 'external' && video?.externalUrl;
         <h1 class="project-detail-title">{title}</h1>
         <p class="project-detail-description">{description}</p>
       </div>
-    {!hasUploadedVideo && !hasExternalVideo && (
-      <figure class="project-cover">
-        <img src={coverImage} alt={title} />
-      </figure>
-    )}
+      {!hasUploadedVideo && !hasExternalVideo && (
+        <figure class="project-cover">
+          <img src={coverImage} alt={title} />
+        </figure>
+      )}
     </section>
     {gallery?.length > 0 && (
       <section class="project-gallery wrap" aria-label={`${title} gallery`}>
-        {gallery.filter(Boolean).map((item, i) => {
-          const imageSrc = typeof item === 'string' ? item : item.image;
-          const imageTitle = typeof item === 'string' ? '' : item.title;
-          return (
-            <figure class={`project-gallery-item ${i % 3 === 0 ? 'project-gallery-wide' : ''}`}>
-              <img src={imageSrc} alt={imageTitle || `${title} — image ${i + 1}`} loading="lazy" />
-              {imageTitle && <figcaption class="project-gallery-caption">{imageTitle}</figcaption>}
-            </figure>
-          );
-        })}
+        {gallery.filter(Boolean).map((image, i) => (
+          <figure class={`project-gallery-item ${i % 3 === 0 ? 'project-gallery-wide' : ''}`}>
+            <img src={image} alt={`${title} — image ${i + 1}`} loading="lazy" />
+          </figure>
+        ))}
       </section>
     )}
     {(hasUploadedVideo || hasExternalVideo) && (
