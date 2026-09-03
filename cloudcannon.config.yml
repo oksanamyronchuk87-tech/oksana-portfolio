@@ -14,7 +14,7 @@ collections_config:
     _inputs:
       title:
         type: text
-        label: Project Title
+        label: Original Product Photography
         cascade: true
       description:
         type: textarea
@@ -22,8 +22,8 @@ collections_config:
         cascade: true
       category:
         type: select
-        label: Category
         options:
+          allow_empty: true
           values:
             - product-photography
             - lifestyle-campaings
@@ -31,6 +31,8 @@ collections_config:
             - ai-video
             - ugc-avatars
             - cgi-video
+          required: false
+        label: Category
         cascade: true
       year:
         type: text
@@ -50,19 +52,20 @@ collections_config:
         cascade: true
       coverOrientation:
         type: select
-        label: Cover Image Shape
         options:
+          allow_empty: true
           values:
             - portrait
             - landscape
             - square
-          allow_empty: true
-        cascade: true   
+          required: false
+        label: Cover Image Shape
+        cascade: true
       gallery:
         type: array
-        label: Gallery Images
         options:
           structures:
+            style: select
             values:
               - label: Gallery Image
                 value:
@@ -72,11 +75,18 @@ collections_config:
                   image:
                     type: image
                     label: Image
+                    cascade: true
                   title:
                     type: text
                     label: Photo Title
                     comment: Optional. Leave empty if no caption
-        cascade: true              
+                    cascade: true
+          disable_add: false
+          disable_remove: false
+          disable_reorder: false
+          required: false
+        label: Gallery Images
+        cascade: true
       order:
         type: number
         label: Display Order

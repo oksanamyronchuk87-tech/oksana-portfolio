@@ -18,11 +18,12 @@ gallery:
   - /uploads/img-1082.png
   - /uploads/img-1157.png
   - /uploads/img-1088.png
-  - /uploads/img-0964.jpeg
   - image: /uploads/img-1172.png
     title:
   - image: /uploads/img-1174.png
     title:
+  - image: /uploads/img-0964.jpeg
+    title: Original Product Photography
 order: 1
 featured: true
 published: true
