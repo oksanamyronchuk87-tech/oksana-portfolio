@@ -119,7 +119,6 @@ collections_config:
         type: object
         label: Hero Showreel
         cascade: true
-        cascace: true
       $.heroShowreel.video:
         type: file
         options:
@@ -136,7 +135,6 @@ collections_config:
         type: image
         label: Hero Showreel Poster
         cascade: true
-        cascace: true
       selectedWorkHeading:
         type: textarea
         label: Selected Work Heading
