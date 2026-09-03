@@ -50,17 +50,14 @@ collections_config:
         cascade: true
       coverOrientation:
         type: select
-        options:
-          - allow_empty: true
-            required: false
-          - allow_empty: true
-            required: false
-          - allow_empty: true
-            required: false
-          - allow_empty: true
-            required: false
         label: Cover Image Shape
-        cascade: true
+        options:
+          values:
+            - portrait
+            - landscape
+            - square
+          allow_empty: true
+        cascade: true   
       gallery:
         type: array
         label: Gallery Images
