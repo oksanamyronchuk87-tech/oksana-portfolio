@@ -10,7 +10,7 @@ description: >-
   attitude.
 category: fashion
 year: '2026'
-coverImage: /uploads/img-1157.png
+coverImage: /uploads/img-1081.png
 coverOrientation: landscape
 gallery:
   - /uploads/img-1081.png
@@ -19,6 +19,10 @@ gallery:
   - /uploads/img-1157.png
   - /uploads/img-1088.png
   - /uploads/img-0964.jpeg
+  - image: /uploads/img-1172.png
+    title:
+  - image: /uploads/img-1174.png
+    title:
 order: 1
 featured: true
 published: true
