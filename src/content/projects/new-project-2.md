@@ -1,10 +1,16 @@
 ---
-title: Project Title
-description: Short project description goes here — one or two sentences about
-  the concept, the brand, or the brief.
+title: CALVIN KLEIN — THE ART OF ESSENTIALS
+description: >-
+  A study of simplicity, skin and form.
+
+  Clean silhouettes, raw intimacy and quiet confidence turn an everyday
+  essential into the focus of the frame.
+
+  No excess. Just the body, the fabric and the unmistakable Calvin Klein
+  attitude.
 category: fashion
 year: '2026'
-coverImage: /uploads/img-1083.png
+coverImage: /uploads/img-1157.png
 coverOrientation: landscape
 gallery:
   - /uploads/img-1081.png
