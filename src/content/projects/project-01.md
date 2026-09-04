@@ -8,7 +8,7 @@ year: '2026'
 coverImage: /uploads/img-1194.png
 coverOrientation: landscape
 gallery:
-  - /uploads/img-1194.png
+  - image: /uploads/img-1194.png
 order: 1
 featured: true
 published: true

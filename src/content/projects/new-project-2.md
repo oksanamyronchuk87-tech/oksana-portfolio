@@ -13,11 +13,11 @@ year: '2026'
 coverImage: /uploads/img-1157.png
 coverOrientation: landscape
 gallery:
-  - /uploads/img-1081.png
-  - /uploads/img-1085.png
-  - /uploads/img-1082.png
-  - /uploads/img-1157.png
-  - /uploads/img-1088.png
+  - image: /uploads/img-1081.png
+  - image: /uploads/img-1085.png
+  - image: /uploads/img-1082.png
+  - image: /uploads/img-1157.png
+  - image: /uploads/img-1088.png
   - image: /uploads/img-1172.png
   - image: /uploads/img-1174.png
   - image: /uploads/img-0964.jpeg
