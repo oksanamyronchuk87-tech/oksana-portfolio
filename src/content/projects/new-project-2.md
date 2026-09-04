@@ -17,7 +17,6 @@ gallery:
   - image: /uploads/img-1085.png
   - image: /uploads/img-1082.png
   - image: /uploads/img-1088.png
-  - image: /uploads/img-1172.png
   - image: /uploads/img-1174.png
   - image: /uploads/img-0964.jpeg
     title: Original Product Photography
