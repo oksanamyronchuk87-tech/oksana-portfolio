@@ -16,7 +16,6 @@ gallery:
   - image: /uploads/img-1081.png
   - image: /uploads/img-1085.png
   - image: /uploads/img-1082.png
-  - image: /uploads/img-1157.png
   - image: /uploads/img-1088.png
   - image: /uploads/img-1172.png
   - image: /uploads/img-1174.png
