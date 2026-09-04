@@ -32,15 +32,21 @@ const hasExternalVideo = video?.sourceType === 'external' && video?.externalUrl;
         </figure>
       )}
     </section>
-    {gallery?.length > 0 && (
-      <section class="project-gallery wrap" aria-label={`${title} gallery`}>
-        {gallery.filter(Boolean).map((image, i) => (
-          <figure class={`project-gallery-item ${i % 3 === 0 ? 'project-gallery-wide' : ''}`}>
-            <img src={image} alt={`${title} — image ${i + 1}`} loading="lazy" />
-          </figure>
-        ))}
-      </section>
-    )}
+{gallery?.length > 0 && (
+  <section class="project-gallery wrap" aria-label={`${title} gallery`}>
+    {gallery.filter(Boolean).map((item, i) => {
+      const imageSrc = typeof item === 'string' ? item : item.image;
+      const imageTitle = typeof item === 'string' ? undefined : item.title;
+
+      return (
+        <figure class={`project-gallery-item ${i % 3 === 0 ? 'project-gallery-wide' : ''}`}>
+          <img src={imageSrc} alt={imageTitle || `${title} — image ${i + 1}`} loading="lazy" />
+          {imageTitle && <figcaption>{imageTitle}</figcaption>}
+        </figure>
+      );
+    })}
+  </section>
+)}
     {(hasUploadedVideo || hasExternalVideo) && (
       <section class="project-video wrap">
         {hasUploadedVideo ? (
