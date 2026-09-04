@@ -64,9 +64,6 @@ collections_config:
       gallery:
         type: array
         options:
-          preview:
-            image:
-              - key: image
           structures:
             style: select
             values:
@@ -74,6 +71,9 @@ collections_config:
                 value:
                   image:
                   title:
+                preview: 
+                  image:
+                    - key: image
                 _inputs:
                   image:
                     type: image
