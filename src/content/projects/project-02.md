@@ -14,7 +14,6 @@ gallery:
   - image: /uploads/img-1820.png
   - image: /uploads/img-1819.png
   - image: /uploads/img-1734-1.webp
-  - image: /uploads/img-1734-1.webp
     title: Original Product Photography
 order: 2
 featured: true
