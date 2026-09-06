@@ -4,7 +4,7 @@ description: 'A conceptual CGI visualization for ROBEAUTY: a coconut scrub tub p
 category: product-photography
 year: '2026'
 coverImage: /uploads/projects/img-1190-2-велике.jpeg
-coverOrientation: portrait
+coverOrientation: landscape
 gallery:
   - image: /uploads/IMG_1192.png
     title: ''
