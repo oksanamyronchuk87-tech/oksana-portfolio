@@ -14,7 +14,7 @@ gallery:
     title: ''
   - image: /uploads/IMG_1197.png
     title: ''
-  - image: /uploads/IMG_1196.png
+  - image: /uploads/IMG_1995.png
     title: Original Product Photography
 order: 1
 featured: true
