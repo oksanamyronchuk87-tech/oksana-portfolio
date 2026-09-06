@@ -6,15 +6,15 @@ year: '2026'
 coverImage: /uploads/projects/img-1190-2-велике.jpeg
 coverOrientation: landscape
 gallery:
-  - image: /uploads/IMG_1192.png
-    title: ''
   - image: /uploads/IMG_1193.png
+    title: ''
+  - image: /uploads/IMG_1192.png
     title: ''
   - image: /uploads/img-1194.png
     title: ''
   - image: /uploads/IMG_1197.png
     title: ''
-  - image: /uploads/IMG_1195.png
+  - image: /uploads/IMG_1196.png
     title: Original Product Photography
 order: 1
 featured: true
