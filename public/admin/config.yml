@@ -1,0 +1,86 @@
+backend:
+  name: github
+  repo: oksanamyronchuk87-tech/oksana-portfolio
+  branch: main
+
+media_folder: /public/uploads
+public_folder: /uploads
+
+collections:
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: /src/content/projects
+    create: true
+    extension: md
+    format: frontmatter
+    identifier_field: title
+
+    fields:
+      - label: Project Title
+        name: title
+        widget: string
+
+      - label: Short Description
+        name: description
+        widget: text
+        required: false
+
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - product-photography
+          - lifestyle-campaigns
+          - fashion
+          - ai-video
+          - ugc-avatars
+          - cgi-video
+
+      - label: Year
+        name: year
+        widget: string
+        required: false
+
+      - label: Cover Image
+        name: coverImage
+        widget: image
+
+      - label: Cover Image Shape
+        name: coverOrientation
+        widget: select
+        options:
+          - portrait
+          - landscape
+          - square
+        required: false
+
+      - label: Gallery Images
+        name: gallery
+        widget: list
+        required: false
+        summary: "{{fields.title}}"
+        fields:
+          - label: Image
+            name: image
+            widget: image
+          - label: Photo Title
+            name: title
+            widget: string
+            required: false
+
+      - label: Display Order
+        name: order
+        widget: number
+        value_type: int
+        default: 1
+
+      - label: Show in Selected Work
+        name: featured
+        widget: boolean
+        default: false
+
+      - label: Published
+        name: published
+        widget: boolean
+        default: true
