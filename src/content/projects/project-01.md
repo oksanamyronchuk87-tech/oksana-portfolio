@@ -17,9 +17,9 @@ gallery:
   - image: /uploads/img-1820.png
     title: ''
   - image: /uploads/img-1819.png
-    title: Test Photo Title
+    title: ''
   - image: /uploads/img-1734.webp
-    title: Original Product
+    title: Original Product Photography
 order: 1
 featured: true
 published: true
