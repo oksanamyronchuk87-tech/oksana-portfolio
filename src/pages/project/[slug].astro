@@ -12,9 +12,15 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { title, description, category, year, coverImage, gallery, video } = project.data;
-const hasUploadedVideo = video?.sourceType === 'upload' && video?.file;
-const hasExternalVideo = video?.sourceType === 'external' && video?.externalUrl;
+const { title, description, category, year, coverImage, gallery, video, videos } = project.data;
+
+const allVideos = videos?.length ? videos : video ? [video] : [];
+
+const hasAnyVideo = allVideos.some(
+  (item) =>
+    (item.sourceType === 'upload' && item.file) ||
+    (item.sourceType === 'external' && item.externalUrl)
+);
 ---
 
 <BaseLayout title={`${title} — Oksana`} description={description}>
@@ -47,19 +53,22 @@ const hasExternalVideo = video?.sourceType === 'external' && video?.externalUrl;
     })}
   </section>
 )}
-    {(hasUploadedVideo || hasExternalVideo) && (
-      <section class="project-video wrap">
-        {hasUploadedVideo ? (
-          <video autoplay muted loop playsinline preload="auto">
-            <source src={video!.file} />
-          </video>
-        ) : (
-          <div class="project-external-video">
-            <a href={video!.externalUrl} target="_blank" rel="noopener">Watch video ↗</a>
-            {video?.poster && <img src={video.poster} alt={`${title} video poster`} loading="lazy" />}
-          </div>
-        )}
-      </section>
-    )}
+    {hasAnyVideo && (
+  <section class="project-video wrap">
+    {allVideos.map((item) => (
+      item.sourceType === 'upload' && item.file ? (
+        <video autoplay muted loop playsinline preload="auto">
+          <source src={item.file} />
+        </video>
+      ) : item.sourceType === 'external' && item.externalUrl ? (
+        <div class="project-external-video">
+          <a href={item.externalUrl} target="_blank" rel="noopener">Watch video ↗</a>
+          {item.poster && <img src={item.poster} alt={`${title} video poster`} loading="lazy" />}
+        </div>
+      ) : null
+    ))}
+  </section>
+)}
+    
   </main>
 </BaseLayout>
