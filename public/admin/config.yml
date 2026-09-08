@@ -68,11 +68,34 @@ collections:
             name: title
             widget: string
             required: false
-
-      - label: Videos
-        name: videos
-        widget: list
+      - label: Video
+        name: video
+        widget: object
         required: false
+        fields:
+          - label: Video Source
+            name: sourceType
+            widget: select
+            options:
+              - upload
+              - external
+            default: upload
+
+          - label: Upload Video
+            name: file
+            widget: file
+            required: false
+            accept: "video/*"
+
+          - label: External Video URL
+            name: externalUrl
+            widget: string
+            required: false
+
+          - label: Video Preview
+            name: poster
+            widget: image
+            required: false
         summary: "{{fields.file}}"
         fields:
           - label: Video Source
