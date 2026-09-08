@@ -68,16 +68,16 @@ collections:
             name: title
             widget: string
             required: false
-            - label: Videos
-        name: videos
-        widget: list
-        required: false
-        summary: "{{fields.file}}"
-        fields:
-          - label: Video Source
-            name: sourceType
-            widget: select
-            options:
+     - label: Videos
+       name: videos
+       widget: list
+       required: false
+       summary: "{{fields.file}}"
+       fields:
+           - label: Video Source
+             name: sourceType
+             widget: select
+             options:
               - upload
               - external
             default: upload
