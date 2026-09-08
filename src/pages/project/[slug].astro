@@ -32,7 +32,8 @@ const hasAnyVideo = allVideos.some(
         <h1 class="project-detail-title">{title}</h1>
         <p class="project-detail-description">{description}</p>
       </div>
-      {!hasUploadedVideo && !hasExternalVideo && (
+        {!hasAnyVideo && (
+   
         <figure class="project-cover">
           <img src={coverImage} alt={title} />
         </figure>
