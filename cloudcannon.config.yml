@@ -120,10 +120,12 @@ collections_config:
       heroEyebrow:
         type: text
         label: Hero Top Label
+        required: false
         cascade: true
       heroSubtitle:
         type: text
         label: Hero Subtitle
+        required: false
         cascade: true
       heroShowreel:
         type: object
@@ -148,18 +150,22 @@ collections_config:
       selectedWorkHeading:
         type: textarea
         label: Selected Work Heading
+        required: false
         cascade: true
       selectedWorkNote:
         type: textarea
         label: Selected Work Description
+        required: false
         cascade: true
       categoryHeading:
         type: textarea
         label: Explore by Category Heading
+        required: false
         cascade: true
       categoryNote:
         type: textarea
         label: Explore by Category Description
+        required: false
         cascade: true
       servicesEyebrow:
         type: text
