@@ -7,6 +7,100 @@ media_folder: /public/uploads
 public_folder: /uploads
 
 collections:
+  - name: homepage
+    label: Home Page
+    files:
+      - name: homepage
+        label: Home Page
+        file: /src/content/homepage/homepage.json
+        fields:
+          - label: Hero Eyebrow
+            name: heroEyebrow
+            widget: string
+
+          - label: Hero Subtitle
+            name: heroSubtitle
+            widget: text
+
+          - label: Hero Showreel
+            name: heroShowreel
+            widget: object
+            fields:
+              - label: Enabled
+                name: enabled
+                widget: boolean
+                default: true
+
+              - label: Video
+                name: video
+                widget: file
+                required: false
+                accept: "video/*"
+
+              - label: Poster
+                name: poster
+                widget: image
+                required: false
+
+          - label: Selected Work Heading
+            name: selectedWorkHeading
+            widget: string
+
+          - label: Selected Work Note
+            name: selectedWorkNote
+            widget: text
+
+          - label: Categories Heading
+            name: categoryHeading
+            widget: string
+
+          - label: Categories Note
+            name: categoryNote
+            widget: text
+
+          - label: Services Eyebrow
+            name: servicesEyebrow
+            widget: string
+
+          - label: Services Intro
+            name: servicesIntro
+            widget: text
+
+          - label: Services
+            name: services
+            widget: list
+
+          - label: CTA Heading
+            name: ctaHeading
+            widget: string
+
+          - label: CTA Subtitle
+            name: ctaSubtitle
+            widget: text
+
+  - name: about
+    label: About
+    files:
+      - name: about
+        label: About
+        file: /src/content/about/about.json
+        fields:
+          - label: About Eyebrow
+            name: eyebrow
+            widget: string
+
+          - label: About Main Heading
+            name: lede
+            widget: text
+
+          - label: About Text
+            name: body
+            widget: text
+
+          - label: About Photo
+            name: portraitImage
+            widget: image
+
   - name: projects
     label: Projects
     label_singular: Project
