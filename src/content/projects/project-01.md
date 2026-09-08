@@ -6,7 +6,7 @@ year: '2026'
 coverImage: /uploads/IMG_2009.png
 coverOrientation: portrait
 gallery:
-  - image: /uploads/IMG_2007.png
+  - image: /uploads/IMG_2021.png
     title: ''
   - image: /uploads/img-1820.png
     title: ''
@@ -14,7 +14,7 @@ gallery:
     title: ''
   - image: /uploads/img-1818-1.png
     title: ''
-  - image: /uploads/img-1794.png
+  - image: /uploads/IMG_2023.png
     title: ''
   - image: /uploads/img-1817.png
     title: ''
