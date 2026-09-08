@@ -68,10 +68,11 @@ collections:
             name: title
             widget: string
             required: false
-      - label: Video
-        name: video
-        widget: object
+            - label: Videos
+        name: videos
+        widget: list
         required: false
+        summary: "{{fields.file}}"
         fields:
           - label: Video Source
             name: sourceType
