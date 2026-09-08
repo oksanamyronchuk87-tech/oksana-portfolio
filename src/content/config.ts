@@ -36,13 +36,27 @@ const projects = defineCollection({
        )
       .default([]),
     video: z
-      .object({
-        sourceType: z.enum(['upload', 'external']).default('external'),
-        file: z.string().optional(),
-        externalUrl: z.string().optional(),
-        poster: z.string().optional(),
-      })
-      .optional(),
+  .object({
+    sourceType: z.enum(['upload', 'external']),
+    file: z.string().optional(),
+    externalUrl: z.string().optional(),
+    poster: z.string().optional(),
+  })
+  .optional(),
+
+videos: z
+  .array(
+    z.object({
+      sourceType: z.enum(['upload', 'external']),
+      file: z.string().optional(),
+      externalUrl: z.string().optional(),
+      poster: z.string().optional(),
+    })
+  )
+  .default([]),
+
+// Editorial / ordering controls
+order: z.number().default(99),
 
     // Editorial / ordering controls
     order: z.number().default(99),
