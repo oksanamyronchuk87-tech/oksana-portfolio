@@ -44,20 +44,6 @@ const projects = defineCollection({
   })
   .optional(),
 
-videos: z
-  .array(
-    z.object({
-      sourceType: z.enum(['upload', 'external']),
-      file: z.string().optional(),
-      externalUrl: z.string().optional(),
-      poster: z.string().optional(),
-    })
-  )
-  .default([]),
-
-// Editorial / ordering controls
-order: z.number().default(99),
-
     // Editorial / ordering controls
     order: z.number().default(99),
     featured: z.boolean().default(false),
