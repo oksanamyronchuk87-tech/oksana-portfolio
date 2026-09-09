@@ -1,7 +1,7 @@
 ---
 title: Atmosphere, Designed
 description: Not just a scent, but a detail that changes how the entire space feels.
-category: cgi-video
+category: ugc-avatars
 year: '2026'
 coverImage: /uploads/IMG_2215.jpeg
 coverOrientation: portrait
