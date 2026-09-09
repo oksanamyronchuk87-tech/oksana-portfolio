@@ -33,9 +33,8 @@ collections:
 
               - label: Video
                 name: video
-                widget: file
+                widget: string
                 required: false
-                accept: "video/*"
 
               - label: Poster
                 name: poster
