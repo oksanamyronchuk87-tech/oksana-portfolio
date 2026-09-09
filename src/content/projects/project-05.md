@@ -1,11 +1,16 @@
 ---
-title: "Project Title"
-description: "Short project description goes here — one or two sentences about the concept, the brand, or the brief."
-category: "ugc-avatars"
-year: "2026"
-coverImage: "/uploads/projects/placeholder-05-cover.jpg"
-coverOrientation: "square"
+title: Atmosphere, Designed
+description: Not just a scent, but a detail that changes how the entire space feels.
+category: cgi-video
+year: '2026'
+coverImage: /uploads/IMG_2215.jpeg
+coverOrientation: portrait
 gallery: []
+video:
+  sourceType: upload
+  file: /uploads/ Reed Diffuser Ad .mp4
+  externalUrl: ''
+  poster: ''
 order: 5
 featured: true
 published: true
