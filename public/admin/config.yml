@@ -12,7 +12,7 @@ collections:
     files:
       - name: homepage
         label: Home Page
-        file: /src/content/homepage/homepage.json
+        file: /src/content/homepage/homepage.yml
         fields:
           - label: Hero Eyebrow
             name: heroEyebrow
