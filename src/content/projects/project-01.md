@@ -20,7 +20,6 @@ gallery:
     title: ''
   - image: /uploads/img-1734.webp
     title: Original Product Photography
-video: null
 order: 1
 featured: true
 published: true
