@@ -58,7 +58,7 @@ const hasAnyVideo = allVideos.some(
   <section class="project-video wrap">
     {allVideos.map((item) => (
       item.sourceType === 'upload' && item.file ? (
-        <video autoplay muted loop playsinline preload="auto">
+        <video controls playsinline preload="metadata">
           <source src={item.file} />
         </video>
       ) : item.sourceType === 'external' && item.externalUrl ? (
