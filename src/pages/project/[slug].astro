@@ -5,6 +5,7 @@ import { categoryLabel } from '../../lib/categories';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects', ({ data }) => data.published);
+
   return projects.map((project) => ({
     params: { slug: project.slug },
     props: { project },
@@ -12,9 +13,24 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { title, description, category, year, coverImage, gallery, video, videos } = project.data;
 
-const allVideos = videos?.length ? videos : video ? [video] : [];
+const {
+  title,
+  description,
+  category,
+  year,
+  coverImage,
+  gallery,
+  videos,
+  video,
+} = project.data;
+
+const allVideos =
+  videos?.length
+    ? videos
+    : video
+      ? [video]
+      : [];
 
 const hasAnyVideo = allVideos.some(
   (item) =>
@@ -25,51 +41,91 @@ const hasAnyVideo = allVideos.some(
 
 <BaseLayout title={`${title} — Oksana`} description={description}>
   <main class="project-detail">
+
     <section class="project-detail-hero wrap">
-      <a class="project-back" href={`/work/${category}/`}>← {categoryLabel(category)}</a>
+      <a class="project-back" href={`/work/${category}/`}>
+        ← {categoryLabel(category)}
+      </a>
+
       <div class="project-detail-head">
-        <p class="eyebrow">{year ? `${year} — ` : ''}{categoryLabel(category)}</p>
+        <p class="eyebrow">
+          {year ? `${year} — ` : ''}{categoryLabel(category)}
+        </p>
+
         <h1 class="project-detail-title">{title}</h1>
-        <p class="project-detail-description">{description}</p>
+
+        <p class="project-detail-description">
+          {description}
+        </p>
       </div>
-        {!hasAnyVideo && (
-   
+
+      {!hasAnyVideo && (
         <figure class="project-cover">
           <img src={coverImage} alt={title} />
         </figure>
       )}
     </section>
-{gallery?.length > 0 && (
-  <section class="project-gallery wrap" aria-label={`${title} gallery`}>
-    {gallery.filter(Boolean).map((item, i) => {
-      const imageSrc = typeof item === 'string' ? item : item.image;
-      const imageTitle = typeof item === 'string' ? undefined : item.title;
 
-      return (
-        <figure class={`project-gallery-item ${i % 3 === 0 ? 'project-gallery-wide' : ''}`}>
-          <img src={imageSrc} alt={imageTitle || `${title} — image ${i + 1}`} loading="lazy" />
-          {imageTitle && <figcaption>{imageTitle}</figcaption>}
-        </figure>
-      );
-    })}
-  </section>
-)}
+    {gallery?.length > 0 && (
+      <section
+        class="project-gallery wrap"
+        aria-label={`${title} gallery`}
+      >
+        {gallery.filter(Boolean).map((item, i) => {
+          const imageSrc =
+            typeof item === 'string' ? item : item.image;
+
+          const imageTitle =
+            typeof item === 'string' ? undefined : item.title;
+
+          return (
+            <figure
+              class={`project-gallery-item ${
+                i % 3 === 0 ? 'project-gallery-wide' : ''
+              }`}
+            >
+              <img
+                src={imageSrc}
+                alt={imageTitle || `${title} — image ${i + 1}`}
+                loading="lazy"
+              />
+
+              {imageTitle && (
+                <figcaption>
+                  {imageTitle}
+                </figcaption>
+              )}
+            </figure>
+          );
+        })}
+      </section>
+    )}
+
     {hasAnyVideo && (
-  <section class="project-video wrap">
-    {allVideos.map((item) => (
-      item.sourceType === 'upload' && item.file ? (
-        <video controls playsinline preload="metadata">
-          <source src={item.file} />
-        </video>
-      ) : item.sourceType === 'external' && item.externalUrl ? (
-        <div class="project-external-video">
-          <a href={item.externalUrl} target="_blank" rel="noopener">Watch video ↗</a>
-          {item.poster && <img src={item.poster} alt={`${title} video poster`} loading="lazy" />}
-        </div>
-      ) : null
-    ))}
-  </section>
-)}
-    
+      <section class="project-video wrap">
+        {allVideos.map((item) => (
+          item.sourceType === 'upload' && item.file ? (
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster={item.poster || undefined}
+            >
+              <source src={item.file} />
+            </video>
+          ) : item.sourceType === 'external' && item.externalUrl ? (
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster={item.poster || undefined}
+            >
+              <source src={item.externalUrl} />
+            </video>
+          ) : null
+        ))}
+      </section>
+    )}
+
   </main>
 </BaseLayout>
