@@ -8,7 +8,7 @@ coverOrientation: portrait
 gallery:
   - image: /uploads/IMG_8830.png
     title: ''
-  - image: /uploads/IMG_8834.png
+  - image: /uploads/projects/img-0007.png
     title: ''
   - image: /uploads/IMG_8832.png
     title: ''
