@@ -53,7 +53,7 @@ collections:
           - portrait
           - landscape
           - square
-        required: false
+        required: true
 
       - label: Gallery Images
         name: gallery
