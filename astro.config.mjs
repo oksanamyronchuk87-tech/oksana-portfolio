@@ -4,6 +4,6 @@ import { defineConfig } from 'astro/config';
 // This is what Netlify + CloudCannon expect.
 export default defineConfig({
   output: 'static',
-  site: 'https://majestic-jelly-b31fdb.netlify.app'
+  site: 'https://majestic-jelly-b31fdb.netlify.app',
   trailingSlash: 'always',
 });
