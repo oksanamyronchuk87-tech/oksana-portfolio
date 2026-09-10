@@ -11,11 +11,18 @@ const categorySlug = z.enum([
   'cgi-video',
 ]);
 
+const videoSchema = z.object({
+  sourceType: z.enum(['upload', 'external']),
+  file: z.string().optional(),
+  externalUrl: z.string().optional(),
+  poster: z.string().optional(),
+});
+
 const projects = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    description: z.string().optional(),
     category: categorySlug,
     year: z.union([z.string(), z.number()]).optional(),
 
@@ -24,6 +31,7 @@ const projects = defineCollection({
     coverOrientation: z
       .enum(['landscape', 'portrait', 'square', 'wide'])
       .default('portrait'),
+
     gallery: z
       .array(
         z.union([
@@ -33,16 +41,14 @@ const projects = defineCollection({
             title: z.string().optional(),
           }),
         ])
-       )
+      )
       .default([]),
-    video: z
-  .object({
-    sourceType: z.enum(['upload', 'external']),
-    file: z.string().optional(),
-    externalUrl: z.string().optional(),
-    poster: z.string().optional(),
-  })
-  .optional(),
+
+    // New format: multiple videos
+    videos: z.array(videoSchema).default([]),
+
+    // Legacy format: keep for existing projects
+    video: videoSchema.optional(),
 
     // Editorial / ordering controls
     order: z.number().default(99),
@@ -98,4 +104,9 @@ const settings = defineCollection({
   }),
 });
 
-export const collections = { projects, homepage, about, settings };
+export const collections = {
+  projects,
+  homepage,
+  about,
+  settings,
+};
