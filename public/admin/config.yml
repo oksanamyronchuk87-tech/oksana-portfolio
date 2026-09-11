@@ -54,8 +54,9 @@ collections:
                 widget: file
                 required: false
                 accept: "video/*"
-                media_library:
-                  name: cloudinary
+                media_libraries:
+                  default: false
+                  cloudinary: true
 
               - label: Poster
                 name: poster
@@ -253,8 +254,9 @@ collections:
             widget: file
             required: false
             accept: "video/*"
-            media_library:
-              name: cloudinary
+            media_libraries:
+              default: false
+              cloudinary: true
 
           - label: External Video URL
             name: externalUrl
