@@ -8,6 +8,148 @@ media_folder: /public/uploads
 public_folder: /uploads
 
 collections:
+  - name: homepage
+    label: Homepage
+    files:
+      - name: homepage
+        label: Homepage
+        file: /src/content/homepage/homepage.yml
+        fields:
+          - label: Hero Top Label
+            name: heroEyebrow
+            widget: string
+
+          - label: Hero Subtitle
+            name: heroSubtitle
+            widget: text
+
+          - label: Hero Showreel
+            name: heroShowreel
+            widget: object
+            fields:
+              - label: Enabled
+                name: enabled
+                widget: boolean
+                default: false
+
+              - label: Video
+                name: video
+                widget: file
+                required: false
+                accept: "video/*"
+
+              - label: Poster
+                name: poster
+                widget: image
+                required: false
+
+          - label: Selected Work Heading
+            name: selectedWorkHeading
+            widget: text
+
+          - label: Selected Work Description
+            name: selectedWorkNote
+            widget: text
+
+          - label: Explore by Category Heading
+            name: categoryHeading
+            widget: text
+
+          - label: Explore by Category Description
+            name: categoryNote
+            widget: text
+
+          - label: Services Section Label
+            name: servicesEyebrow
+            widget: string
+
+          - label: Services Intro Text
+            name: servicesIntro
+            widget: text
+
+          - label: Services List
+            name: services
+            widget: list
+            field:
+              label: Service
+              name: service
+              widget: string
+
+          - label: Final CTA Heading
+            name: ctaHeading
+            widget: text
+
+          - label: Final CTA Subtitle
+            name: ctaSubtitle
+            widget: string
+
+  - name: about
+    label: About
+    files:
+      - name: about
+        label: About
+        file: /src/content/about/about.json
+        fields:
+          - label: Section Label
+            name: eyebrow
+            widget: string
+
+          - label: Headline Sentence
+            name: lede
+            widget: text
+
+          - label: Body Text
+            name: body
+            widget: text
+
+          - label: Portrait Image
+            name: portraitImage
+            widget: image
+
+  - name: settings
+    label: Site Settings
+    files:
+      - name: settings
+        label: Site Settings
+        file: /src/content/settings/settings.yml
+        fields:
+          - label: Name
+            name: name
+            widget: string
+
+          - label: Professional Title
+            name: professionalTitle
+            widget: string
+
+          - label: Instagram URL
+            name: instagramUrl
+            widget: string
+
+          - label: Email Address
+            name: email
+            widget: string
+
+          - label: Upwork URL
+            name: upworkUrl
+            widget: string
+
+          - label: Footer Year
+            name: footerYear
+            widget: string
+
+          - label: SEO Title
+            name: seoTitle
+            widget: string
+
+          - label: SEO Description
+            name: seoDescription
+            widget: text
+
+          - label: Social Sharing Image
+            name: socialImage
+            widget: image
+            required: false
+
   - name: projects
     label: Projects
     label_singular: Project
@@ -37,6 +179,7 @@ collections:
           - ai-video
           - ugc-avatars
           - cgi-video
+        default: product-photography
 
       - label: Year
         name: year
@@ -55,6 +198,7 @@ collections:
           - landscape
           - square
         required: true
+        default: portrait
 
       - label: Gallery Images
         name: gallery
