@@ -2,6 +2,7 @@ backend:
   name: github
   repo: oksanamyronchuk87-tech/oksana-portfolio
   branch: main
+  skip_ci: true
 
 media_folder: /public/uploads
 public_folder: /uploads
