@@ -22,6 +22,7 @@ media_libraries:
     config:
       cloud_name: itg6ttpn
       api_key: '936911598121987'
+      upload_preset: portfolio_video
 
 collections:
   - name: homepage
