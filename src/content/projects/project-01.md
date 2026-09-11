@@ -16,7 +16,7 @@ gallery:
     title: ''
   - image: /uploads/IMG_2023.png
     title: ''
-  - image: /uploads/IMG_1944.png
+  - image: /uploads/img-1817.png
     title: ''
   - image: /uploads/img-1734.webp
     title: Original Product Photography
