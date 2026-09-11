@@ -18,11 +18,6 @@ media_libraries:
           height: 2400
         svg:
           optimize: true
-  cloudinary:
-    config:
-      cloud_name: itg6ttpn
-      api_key: '936911598121987'
-      upload_preset: portfolio_video
 
 collections:
   - name: homepage
@@ -54,9 +49,6 @@ collections:
                 widget: file
                 required: false
                 accept: "video/*"
-                media_libraries:
-                  default: false
-                  cloudinary: {}
 
               - label: Poster
                 name: poster
@@ -254,9 +246,6 @@ collections:
             widget: file
             required: false
             accept: "video/*"
-            media_libraries:
-              default: false
-              cloudinary: {}
 
           - label: External Video URL
             name: externalUrl
