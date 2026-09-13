@@ -6,12 +6,13 @@ year: '2026'
 coverImage: /uploads/IMG_2215.jpeg
 coverOrientation: portrait
 gallery: []
-video:
-  sourceType: upload
-  file: /uploads/ Reed Diffuser Ad .mp4
-  externalUrl: ''
-  poster: ''
+videos: []
 order: 5
-featured: true
+featured: false
 published: true
+video:
+  externalUrl: ''
+  file: /uploads/ Reed Diffuser Ad .mp4
+  poster: ''
+  sourceType: upload
 ---
