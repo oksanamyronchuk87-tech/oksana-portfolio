@@ -7,7 +7,7 @@ coverImage: /uploads/projects/img-1416.jpeg
 coverOrientation: portrait
 gallery: []
 videos:
-  - sourceType: upload
+  - sourceType: external
     file: ''
     externalUrl: https://player.cloudinary.com/embed/?cloud_name=itg6ttpn&public_id=copy_AD0C3010-3EE6-49BF-9C0F-3648C7BC8F76
     poster: ''
