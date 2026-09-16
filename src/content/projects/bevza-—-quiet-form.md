@@ -8,11 +8,7 @@ coverOrientation: portrait
 gallery:
   - image: /uploads/IMG_1169.webp
     title: Original Reference Photography
-videos:
-  - sourceType: external
-    file: ''
-    externalUrl: https://res.cloudinary.com/itg6ttpn/video/upload/f_mp4/copy_9BC7BA62-8EE9-4040-AE5D-F9C07DBBD545.mp4
-    poster: ''
+videos: []
 order: 1
 featured: false
 published: true
