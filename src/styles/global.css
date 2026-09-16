@@ -126,6 +126,12 @@
   }
   .plate:hover .plate-scale{ transform:scale(1.035); }
 
+  .cover-img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+
   /* ============ NAV ============ */
   .nav{
     position:fixed; top:0; left:0; right:0; z-index:100;
@@ -510,6 +516,7 @@
   gap:2.2vw 1.8vw;
 }
 .project-grid .work-item .plate{ aspect-ratio:4/5; border-radius:2px; }
+.project-grid .cover-img{ object-fit:contain; }
 
 @media (max-width:980px){
   .project-grid{ grid-template-columns:repeat(2, 1fr); gap:8vw 5vw; }
