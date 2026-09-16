@@ -11,7 +11,7 @@ gallery:
 videos:
   - sourceType: upload
     file: ''
-    externalUrl: copy_9BC7BA62-8EE9-4040-AE5D-F9C07DBBD545
+    externalUrl: https://res.cloudinary.com/itg6ttpn/video/upload/copy_9BC7BA62-8EE9-4040-AE5D-F9C07DBBD545.mov
     poster: ''
 order: 1
 featured: false
