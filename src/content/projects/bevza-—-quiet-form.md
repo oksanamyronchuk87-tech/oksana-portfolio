@@ -9,9 +9,9 @@ gallery:
   - image: /uploads/IMG_1169.webp
     title: Original Reference Photography
 videos:
-  - sourceType: upload
+  - sourceType: external
     file: ''
-    externalUrl: copy_9BC7BA62-8EE9-4040-AE5D-F9C07DBBD545
+    externalUrl: https://res.cloudinary.com/itg6ttpn/video/upload/f_mp4/copy_9BC7BA62-8EE9-4040-AE5D-F9C07DBBD545.mp4
     poster: ''
 order: 1
 featured: false
