@@ -5,7 +5,9 @@ category: fashion
 year: '2026'
 coverImage: /uploads/IMG_1274.webp
 coverOrientation: portrait
-gallery: []
+gallery:
+  - image: /uploads/IMG_2451.webp
+    title: Original Reference Photography
 videos:
   - sourceType: external
     file: ''
