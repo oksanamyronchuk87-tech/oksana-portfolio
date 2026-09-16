@@ -9,7 +9,7 @@ gallery: []
 videos:
   - sourceType: external
     file: ''
-    externalUrl: https://player.cloudinary.com/embed/?cloud_name=itg6ttpn&public_id=copy_AD0C3010-3EE6-49BF-9C0F-3648C7BC8F76
+    externalUrl: https://res.cloudinary.com/itg6ttpn/video/upload/f_mp4/copy_AD0C3010-3EE6-49BF-9C0F-3648C7BC8F76.mp4
     poster: ''
 order: 1
 featured: false
