@@ -1,5 +1,5 @@
 ---
-title: Grey Zone
+title: Grey Zone · Video
 description: "An empty white studio box — and one detail that grabs the eye: green sneakers cutting through the grey. The AI didn't just dress the model — it made the fabric breathe with every step. Minimal set, maximum character in motion."
 category: fashion
 year: '2026'
