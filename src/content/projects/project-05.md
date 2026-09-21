@@ -8,7 +8,7 @@ coverOrientation: portrait
 gallery: []
 videos: []
 order: 5
-featured: false
+featured: true
 published: true
 video:
   externalUrl: ''
