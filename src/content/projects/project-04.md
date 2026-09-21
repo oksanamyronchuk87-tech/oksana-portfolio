@@ -6,12 +6,13 @@ year: '2026'
 coverImage: /uploads/IMG_1392.png
 coverOrientation: square
 gallery: []
-video:
-  sourceType: upload
-  file: /uploads/copy_F15ADA98-776E-412E-888E-A4DC64D4F96C.mov
-  externalUrl: ''
-  poster: ''
+videos: []
 order: 4
-featured: true
+featured: false
 published: true
+video:
+  externalUrl: ''
+  file: /uploads/copy_F15ADA98-776E-412E-888E-A4DC64D4F96C.mov
+  poster: ''
+  sourceType: upload
 ---
