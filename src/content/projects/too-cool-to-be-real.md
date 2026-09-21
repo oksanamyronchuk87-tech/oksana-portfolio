@@ -7,7 +7,7 @@ coverImage: /uploads/IMG_1427.webp
 coverOrientation: portrait
 gallery: []
 videos:
-  - sourceType: upload
+  - sourceType: external
     file: ''
     externalUrl: https://res.cloudinary.com/itg6ttpn/video/upload/higgsfield-53e91655-a368-46ad-bcb5-80d650eb9d5b.mp4
     poster: ''
