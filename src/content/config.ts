@@ -24,6 +24,13 @@ const projects = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     category: categorySlug,
+    // Optional filter tab within the category (see src/lib/categories.ts).
+    // Empty or unknown values are fine: the project just shows under "All".
+    subcategory: z
+      .string()
+      .nullable()
+      .optional()
+      .transform((v) => v || undefined),
     year: z.union([z.string(), z.number()]).optional(),
 
     // Media

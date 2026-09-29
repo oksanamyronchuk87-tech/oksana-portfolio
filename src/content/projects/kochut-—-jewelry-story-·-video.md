@@ -2,6 +2,7 @@
 title: KOCHUT — Jewelry Story · Video
 description: Jewelry becomes the only color accent in the frame, drawing all attention to the details.
 category: ai-video
+subcategory: commercial
 year: '2026'
 coverImage: /uploads/IMG_0243.webp
 coverOrientation: portrait

@@ -2,6 +2,7 @@
 title: Magical Birthday | Commercial AI Video
 description: A commercial project featuring a personalized birthday video for a child. A magical world of unicorns, rainbows, and fairy-tale wonder, brought to life with AI.
 category: ai-video
+subcategory: animation
 year: '2026'
 coverImage: /uploads/IMG_1696.webp
 coverOrientation: portrait

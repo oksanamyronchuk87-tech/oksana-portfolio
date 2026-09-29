@@ -26,13 +26,25 @@ collections_config:
           allow_empty: true
           values:
             - product-photography
-            - lifestyle-campaings
+            - lifestyle-campaigns
             - fashion
             - ai-video
             - ugc-avatars
             - cgi-video
           required: false
         label: Category
+        cascade: true
+      subcategory:
+        type: select
+        options:
+          allow_empty: true
+          values:
+            - interior
+            - animation
+            - commercial
+          required: false
+        label: Subcategory (AI Video only)
+        comment: 'Filter tab on the AI Video page: interior = Interior & Real Estate, animation = Animation, commercial = Commercial & Product. Leave empty for other categories.'
         cascade: true
       year:
         type: text

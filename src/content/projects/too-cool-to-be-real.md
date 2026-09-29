@@ -2,6 +2,7 @@
 title: Too Cool to Be Real
 description: A playful CGI moment where attitude, character and 3D animation take over the frame.
 category: ai-video
+subcategory: animation
 year: '2026'
 coverImage: /uploads/IMG_1427.webp
 coverOrientation: portrait
