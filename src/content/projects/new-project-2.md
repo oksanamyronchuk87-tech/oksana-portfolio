@@ -5,6 +5,7 @@ description: |-
   Clean silhouettes, raw intimacy and quiet confidence turn an everyday essential into the focus of the frame.
   No excess. Just the body, the fabric and the unmistakable Calvin Klein attitude.
 category: fashion
+subcategory: photo
 year: '2026'
 coverImage: /uploads/img-1082.png
 coverOrientation: portrait

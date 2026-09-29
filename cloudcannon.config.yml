@@ -42,9 +42,11 @@ collections_config:
             - interior
             - animation
             - commercial
+            - photo
+            - video
           required: false
-        label: Subcategory (AI Video only)
-        comment: 'Filter tab on the AI Video page: interior = Interior & Real Estate, animation = Animation, commercial = Commercial & Product. Leave empty for other categories.'
+        label: Subcategory
+        comment: 'Filter tab on the category page. AI Video: interior = Interior & Real Estate, animation = Animation, commercial = Commercial & Product. Fashion: photo = Photo Campaigns, video = Video. Leave empty for other categories.'
         cascade: true
       year:
         type: text

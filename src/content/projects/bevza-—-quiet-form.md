@@ -2,6 +2,7 @@
 title: BEVZA — Quiet Form · Video
 description: A study of silhouette, movement, and restraint. The dress becomes the focus, letting BEVZA’s minimalism speak without saying too much.
 category: fashion
+subcategory: video
 year: '2026'
 coverImage: /uploads/IMG_2490.webp
 coverOrientation: portrait
