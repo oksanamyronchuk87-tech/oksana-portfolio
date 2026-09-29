@@ -1,7 +1,7 @@
 ---
 title: After Hours at the Beauty Counter | AI Video
 description: What if the beauty counter came to life after closing? I turned a shelf of cosmetics into a tiny world where the products have their own personalities. A playful beauty video built around familiar products and a little bit of magic.
-category: cgi-video
+category: ai-video
 year: '2026'
 coverImage: /uploads/IMG_8552.webp
 coverOrientation: portrait
