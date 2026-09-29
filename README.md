@@ -83,6 +83,9 @@ Settings.
   safe: the project just shows under "All". A tab only appears once at
   least one project uses it. Tab names live in `src/lib/categories.ts`.
   A filtered view can be shared as a link, e.g. `/work/ai-video/#interior`.
+- **New projects** start from `.cloudcannon/schemas/project.md`, so every
+  field (Subcategory, Videos, Before / After Sliders…) is there from the
+  start. Keep that file in sync when adding a new field.
 
 ## Images & video before you upload real content
 

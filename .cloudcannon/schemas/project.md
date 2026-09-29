@@ -2,17 +2,14 @@
 title: ""
 description: ""
 category: product-photography
+subcategory: ""
 year: "2026"
 coverImage: ""
 coverOrientation: portrait
 gallery: []
-video:
-  sourceType: upload
-  file: ""
-  externalUrl: ""
-  poster: ""
-order: 99
+beforeAfter: []
+videos: []
+order: 1
 featured: false
-published: false
+published: true
 ---
-
