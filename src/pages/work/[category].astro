@@ -17,6 +17,11 @@ const allProjects = await getCollection('projects');
 const projects = allProjects
   .filter((p) => p.data.published && p.data.category === cat.slug)
   .sort((a, b) => a.data.order - b.data.order);
+
+// Filter tabs: only subcategories that actually have a project get a tab.
+const tabs = (cat.subcategories ?? []).filter((sub) =>
+  projects.some((p) => p.data.subcategory === sub.slug)
+);
 ---
 <BaseLayout title={`${cat.name} — Oksana`}>
   <section class="section">
@@ -35,6 +40,17 @@ const projects = allProjects
       {projects.length === 0 ? (
         <p class="section-note">No published projects in this category yet.</p>
       ) : (
+        <>
+        {tabs.length > 0 && (
+          <div class="subcat-tabs reveal" role="group" aria-label={`Filter ${cat.name}`}>
+            <button type="button" class="subcat-tab" data-filter="all" aria-pressed="true">All</button>
+            {tabs.map((sub) => (
+              <button type="button" class="subcat-tab" data-filter={sub.slug} aria-pressed="false">
+                {sub.name}
+              </button>
+            ))}
+          </div>
+        )}
         <div class="project-grid">
           {projects.map((project, i) => (
             <ProjectCard
@@ -45,7 +61,47 @@ const projects = allProjects
             />
           ))}
         </div>
+        </>
       )}
     </div>
   </section>
+
+  <script>
+    // Subcategory filter tabs. Without JS every project stays visible.
+    // The active tab is kept in the URL hash (e.g. /work/ai-video/#interior)
+    // so a filtered view can be shared as a link.
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.subcat-tab');
+    const cards = document.querySelectorAll<HTMLElement>('.project-grid .work-item');
+
+    function applyFilter(filter: string) {
+      let n = 0;
+      cards.forEach((card) => {
+        const show = filter === 'all' || card.dataset.sub === filter;
+        card.hidden = !show;
+        if (show) {
+          n += 1;
+          const num = card.querySelector('.num');
+          if (num) num.textContent = `N°${String(n).padStart(2, '0')}`;
+        }
+      });
+      tabs.forEach((t) => t.setAttribute('aria-pressed', String(t.dataset.filter === filter)));
+    }
+
+    if (tabs.length) {
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const filter = tab.dataset.filter ?? 'all';
+          applyFilter(filter);
+          history.replaceState(null, '', filter === 'all' ? location.pathname : `#${filter}`);
+        });
+      });
+
+      const fromHash = () => {
+        const hash = location.hash.slice(1);
+        applyFilter([...tabs].some((t) => t.dataset.filter === hash) ? hash : 'all');
+      };
+      if (location.hash) fromHash();
+      window.addEventListener('hashchange', fromHash);
+    }
+  </script>
 </BaseLayout>

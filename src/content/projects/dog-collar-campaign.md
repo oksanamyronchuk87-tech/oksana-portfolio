@@ -2,6 +2,7 @@
 title: Dog Collar Campaign
 description: A playful AI video campaign that puts the dog collar in the spotlight, turning a simple pet accessory into the hero of the frame.
 category: ai-video
+subcategory: commercial
 year: '2026'
 coverImage: /uploads/IMG_1228.webp
 coverOrientation: portrait

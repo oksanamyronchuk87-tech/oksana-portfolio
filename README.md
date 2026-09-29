@@ -76,6 +76,12 @@ Settings.
   edit a category page directly.
 - Turning **Published** off hides a project everywhere without
   deleting it.
+- **AI Video filter tabs.** The AI Video page has tabs (All · Interior &
+  Real Estate · Animation · Commercial & Product). Pick one in the
+  project's **Subcategory** dropdown in CloudCannon. Leaving it empty is
+  safe: the project just shows under "All". A tab only appears once at
+  least one project uses it. Tab names live in `src/lib/categories.ts`.
+  A filtered view can be shared as a link, e.g. `/work/ai-video/#interior`.
 
 ## Images & video before you upload real content
 

@@ -18,11 +18,11 @@ const {
   toneClass = ''
 } = Astro.props;
 
-const { title, coverImage, category } = project.data;
+const { title, coverImage, category, subcategory } = project.data;
 const href = `/project/${project.slug}/`;
 ---
 
-<a class={`work-item project-link ${extraClass}`} href={href}>
+<a class={`work-item project-link ${extraClass}`} href={href} data-sub={subcategory}>
   <div class={`plate ${toneClass}`}>
     <img
       class="cover-img"

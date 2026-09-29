@@ -2,6 +2,7 @@
 title: Architectural Vision Video for Real Estate Developers
 description: I created this video to show how a future residential project could look and feel from above. It’s the kind of visual a developer can use to introduce a new property, show its setting and help buyers picture the finished place.
 category: ai-video
+subcategory: interior
 year: '2026'
 coverImage: /uploads/IMG_1204.webp
 coverOrientation: portrait
