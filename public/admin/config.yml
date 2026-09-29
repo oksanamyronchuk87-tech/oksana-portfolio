@@ -226,6 +226,26 @@ collections:
             widget: string
             required: false
 
+      - label: Before / After Sliders
+        name: beforeAfter
+        widget: list
+        required: false
+        hint: "Interactive slider visitors can drag. Use two images with the same size and framing."
+        summary: "{{fields.title}}"
+        fields:
+          - label: Before Image
+            name: before
+            widget: image
+
+          - label: After Image
+            name: after
+            widget: image
+
+          - label: Caption
+            name: title
+            widget: string
+            required: false
+
       - label: Videos
         name: videos
         widget: list

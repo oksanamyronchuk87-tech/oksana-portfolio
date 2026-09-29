@@ -90,6 +90,34 @@ collections_config:
           required: false
         label: Gallery Images
         cascade: true
+      beforeAfter:
+        type: array
+        options:
+          structures:
+            style: select
+            values:
+              - label: Before / After Slider
+                value:
+                  before:
+                  after:
+                  title:
+                preview:
+                  image:
+                    - key: after
+                _inputs:
+                  before:
+                    type: image
+                    label: Before Image
+                  after:
+                    type: image
+                    label: After Image
+                  title:
+                    type: text
+                    label: Caption
+                    comment: Optional
+        label: Before / After Sliders
+        comment: Interactive slider visitors can drag. Use two images with the same size and framing.
+        cascade: true
       order:
         type: number
         label: Display Order

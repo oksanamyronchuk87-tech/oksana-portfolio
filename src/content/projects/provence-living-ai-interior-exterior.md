@@ -9,7 +9,7 @@ gallery: []
 videos:
   - sourceType: external
     file: ''
-    externalUrl: 'externalUrl: https://res.cloudinary.com/itg6ttpn/video/upload/f_mp4/Provence_Style_Interiors_Exteriors.mp4'
+    externalUrl: 'https://res.cloudinary.com/itg6ttpn/video/upload/f_mp4/Provence_Style_Interiors_Exteriors.mp4'
     poster: ''
 order: 1
 featured: false

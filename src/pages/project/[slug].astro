@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { categoryLabel } from '../../lib/categories';
+import BeforeAfter from '../../components/BeforeAfter.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects', ({ data }) => data.published);
@@ -23,7 +24,12 @@ const {
   gallery,
   videos,
   video,
+  beforeAfter,
 } = project.data;
+
+const comparisons = (beforeAfter ?? []).filter(
+  (item) => item && item.before && item.after
+);
 
 const allVideos =
   videos?.length
@@ -59,12 +65,25 @@ const hasAnyVideo = allVideos.some(
         </p>
       </div>
 
-      {!hasAnyVideo && (
+      {!hasAnyVideo && comparisons.length === 0 && (
         <figure class="project-cover">
           <img src={coverImage} alt={title} />
         </figure>
       )}
     </section>
+
+    {comparisons.length > 0 && (
+      <section class="project-compare wrap" aria-label={`${title} before and after`}>
+        {comparisons.map((item) => (
+          <BeforeAfter
+            before={item.before!}
+            after={item.after!}
+            title={item.title ?? undefined}
+            alt={title}
+          />
+        ))}
+      </section>
+    )}
 
     {gallery?.length > 0 && (
       <section

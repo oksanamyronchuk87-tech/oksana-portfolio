@@ -44,6 +44,19 @@ const projects = defineCollection({
       )
       .default([]),
 
+    // Interactive before / after sliders
+    beforeAfter: z
+      .array(
+        z.object({
+          before: z.string().optional(),
+          after: z.string().optional(),
+          title: z.string().optional().nullable(),
+        })
+      )
+      .nullable()
+      .optional()
+      .transform((v) => v ?? []),
+
     // New format: multiple videos
     videos: z.array(videoSchema).default([]),
 

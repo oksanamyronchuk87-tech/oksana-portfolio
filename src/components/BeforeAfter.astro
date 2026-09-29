@@ -1,0 +1,150 @@
+---
+// Interactive before / after comparison.
+// Visitors drag the handle (finger or mouse) to reveal the "before" image
+// over the "after" image. Both images should be the same size and framing.
+interface Props {
+  before: string;
+  after: string;
+  title?: string;
+  alt?: string;
+}
+
+const { before, after, title, alt = 'Project' } = Astro.props;
+---
+
+<figure class="compare-figure">
+  <div class="compare" data-compare style="--pos:50%">
+    <img class="compare-after" src={after} alt={`${alt} — after`} loading="lazy" draggable="false" />
+    <img class="compare-before" src={before} alt={`${alt} — before`} loading="lazy" draggable="false" />
+    <span class="compare-chip compare-chip-before" data-chip-before>Before</span>
+    <span class="compare-chip compare-chip-after" data-chip-after>After</span>
+    <span class="compare-line" aria-hidden="true"></span>
+    <span class="compare-knob" aria-hidden="true">
+      <svg viewBox="0 0 26 26" fill="none">
+        <path d="M10 7 4 13l6 6M16 7l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+    <input
+      class="compare-range"
+      type="range"
+      min="0"
+      max="100"
+      step="0.5"
+      value="50"
+      aria-label="Drag to compare before and after"
+    />
+  </div>
+  <figcaption class="compare-caption">
+    {title && <span>{title}</span>}
+    <span class="compare-hint">Drag to compare</span>
+  </figcaption>
+</figure>
+
+<script>
+  function initCompare(box: HTMLElement) {
+    const range = box.querySelector<HTMLInputElement>('.compare-range')!;
+    const chipB = box.querySelector<HTMLElement>('[data-chip-before]')!;
+    const chipA = box.querySelector<HTMLElement>('[data-chip-after]')!;
+
+    const set = (p: number) => {
+      p = Math.max(0, Math.min(100, p));
+      box.style.setProperty('--pos', p + '%');
+      range.value = String(p);
+      chipB.style.opacity = p < 18 ? '0' : '1';
+      chipA.style.opacity = p > 82 ? '0' : '1';
+    };
+    const fromEvent = (e: PointerEvent) => {
+      const r = box.getBoundingClientRect();
+      return ((e.clientX - r.left) / r.width) * 100;
+    };
+
+    let hintRaf: number | null = null;
+    const stopHint = () => {
+      if (hintRaf !== null) cancelAnimationFrame(hintRaf);
+      hintRaf = null;
+    };
+
+    let dragging = false;
+    let decided = false;
+    let startX = 0;
+    let startY = 0;
+
+    box.addEventListener('pointerdown', (e) => {
+      stopHint();
+      dragging = true;
+      decided = e.pointerType === 'mouse';
+      startX = e.clientX;
+      startY = e.clientY;
+      if (decided) {
+        box.setPointerCapture(e.pointerId);
+        box.classList.add('is-dragging');
+        set(fromEvent(e));
+      }
+    });
+
+    box.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      if (!decided) {
+        const dx = Math.abs(e.clientX - startX);
+        const dy = Math.abs(e.clientY - startY);
+        if (dx < 4 && dy < 4) return;
+        // vertical swipe on a phone: let the page scroll instead
+        if (dy > dx) {
+          dragging = false;
+          return;
+        }
+        decided = true;
+        box.setPointerCapture(e.pointerId);
+        box.classList.add('is-dragging');
+      }
+      set(fromEvent(e));
+    });
+
+    const end = (e: PointerEvent) => {
+      // a simple tap jumps the handle to that spot
+      if (dragging && !decided && e.type === 'pointerup') set(fromEvent(e));
+      dragging = false;
+      box.classList.remove('is-dragging');
+    };
+    box.addEventListener('pointerup', end);
+    box.addEventListener('pointercancel', end);
+
+    range.addEventListener('input', () => {
+      stopHint();
+      set(parseFloat(range.value));
+    });
+
+    set(50);
+
+    // one gentle nudge when the slider first scrolls into view,
+    // so visitors can see that it moves
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (!entries.some((en) => en.isIntersecting)) return;
+          io.disconnect();
+          let t0: number | null = null;
+          const run = (t: number) => {
+            if (t0 === null) t0 = t;
+            const k = (t - t0) / 1600;
+            if (k >= 1) {
+              set(50);
+              hintRaf = null;
+              return;
+            }
+            set(50 + Math.sin(k * Math.PI * 2) * 14 * (1 - k));
+            hintRaf = requestAnimationFrame(run);
+          };
+          setTimeout(() => {
+            hintRaf = requestAnimationFrame(run);
+          }, 500);
+        },
+        { threshold: 0.5 }
+      );
+      io.observe(box);
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-compare]').forEach(initCompare);
+</script>
