@@ -17,7 +17,16 @@ export type Category = {
 export const CATEGORIES: readonly Category[] = [
   { slug: 'product-photography', index: '01', name: 'AI Product Photography', tone: 'dark' },
   { slug: 'lifestyle-campaigns', index: '02', name: 'Lifestyle & Campaigns', tone: 'ivory' },
-  { slug: 'fashion', index: '03', name: 'Fashion', tone: 'dark' },
+  {
+    slug: 'fashion',
+    index: '03',
+    name: 'Fashion',
+    tone: 'dark',
+    subcategories: [
+      { slug: 'photo', name: 'Photo Campaigns' },
+      { slug: 'video', name: 'Video' },
+    ],
+  },
   {
     slug: 'ai-video',
     index: '04',
