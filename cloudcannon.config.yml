@@ -11,6 +11,10 @@ collections_config:
     icon: photo_library
     disable_url: false
     include_developer_files: false
+    schemas:
+      default:
+        path: .cloudcannon/schemas/project.md
+        name: Project
     _inputs:
       title:
         type: text
@@ -131,6 +135,41 @@ collections_config:
                     comment: Optional
         label: Before / After Sliders
         comment: Interactive slider visitors can drag. Use two images with the same size and framing.
+        cascade: true
+      videos:
+        type: array
+        options:
+          structures:
+            style: select
+            values:
+              - label: Video
+                value:
+                  sourceType: external
+                  file: ''
+                  externalUrl: ''
+                  poster: ''
+                _inputs:
+                  sourceType:
+                    type: select
+                    label: Video Source
+                    comment: external = link (e.g. Cloudinary), upload = file uploaded to the site
+                    options:
+                      values:
+                        - external
+                        - upload
+                  externalUrl:
+                    type: text
+                    label: Video Link
+                    comment: For external videos, paste the full link, e.g. https://res.cloudinary.com/…/video.mp4
+                  file:
+                    type: file
+                    label: Uploaded Video File
+                    comment: Only for upload videos
+                  poster:
+                    type: image
+                    label: Poster Image
+                    comment: Optional
+        label: Videos
         cascade: true
       order:
         type: number
