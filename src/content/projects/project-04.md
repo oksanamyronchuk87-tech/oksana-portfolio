@@ -2,6 +2,7 @@
 title: Made to Feel Real
 description: A fully AI-generated UGC avatar built to feel spontaneous and unproduced. Natural gestures, expressive delivery and a casual in-car setting blur the line between generated content and a real creator moment.
 category: ugc-avatars
+subcategory: ''
 year: '2026'
 coverImage: /uploads/IMG_1392.png
 coverOrientation: square

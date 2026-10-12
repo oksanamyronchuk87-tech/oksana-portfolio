@@ -2,6 +2,7 @@
 title: SKLL — Commercial CGI Project
 description: A commercial collaboration with SKLL, created to present the brand’s denim corset through a bold CGI concept. The piece combines fashion with a surreal visual transformation, turning the product into the central element of the scene.
 category: cgi-video
+subcategory: ''
 year: '2027'
 coverImage: /uploads/IMG_9221.webp
 coverOrientation: portrait
