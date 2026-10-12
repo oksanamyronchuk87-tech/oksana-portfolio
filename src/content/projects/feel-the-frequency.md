@@ -2,6 +2,7 @@
 title: FEEL THE FREQUENCY
 description: Sound you can almost touch. A visual exploration of rhythm through texture, motion and light, turning every beat into something physical.
 category: product-photography
+subcategory: ''
 year: '2026'
 coverImage: /uploads/IMG_2465.webp
 coverOrientation: portrait

@@ -2,6 +2,7 @@
 title: Lemon Mood
 description: A playful footwear story where soft yellow tones, sheer daisies and fresh lemons turn a simple pair of shoes into the mood of the whole frame.
 category: lifestyle-campaigns
+subcategory: ''
 year: '2026'
 coverImage: /uploads/IMG_0360.webp
 coverOrientation: portrait

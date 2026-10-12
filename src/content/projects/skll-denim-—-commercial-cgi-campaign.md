@@ -2,6 +2,7 @@
 title: SKLL Denim — Commercial CGI Campaign
 description: A commercial project created for SKLL Denim, focusing on the bag through dark, minimal visuals and close-up details. The product stays at the center while light, texture and movement shape the mood.
 category: cgi-video
+subcategory: ''
 year: '2026'
 coverImage: /uploads/IMG_2503.webp
 coverOrientation: portrait

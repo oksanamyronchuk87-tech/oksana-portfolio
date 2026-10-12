@@ -2,6 +2,7 @@
 title: WILD ELEGANCE — Lingerie Campaign
 description: 'An AI lingerie campaign concept: red lace against emerald marble, with a crocodile as a symbol of danger, confidence and power. Consistent model, lace details and cinematic light across the whole series.'
 category: fashion
+subcategory: photo
 year: '2026'
 coverImage: /uploads/IMG_9019.webp
 coverOrientation: portrait

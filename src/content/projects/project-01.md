@@ -2,6 +2,7 @@
 title: DIOR — Where Luxury Begins
 description: Short project description goes here — one or two sentences about the concept, the brand, or the brief.
 category: lifestyle-campaigns
+subcategory: ''
 year: '2026'
 coverImage: /uploads/IMG_2009.png
 coverOrientation: portrait
