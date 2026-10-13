@@ -192,6 +192,18 @@ collections:
           - cgi-video
         default: product-photography
 
+      - label: Subcategory
+        name: subcategory
+        widget: select
+        required: false
+        hint: "Filter tab on the category page. AI Video → Interior / Animation / Commercial. Fashion → Photo / Video. Leave empty for other categories."
+        options:
+          - { label: "AI Video — Interior & Real Estate", value: interior }
+          - { label: "AI Video — Animation", value: animation }
+          - { label: "AI Video — Commercial & Product", value: commercial }
+          - { label: "Fashion — Photo Campaigns", value: photo }
+          - { label: "Fashion — Video", value: video }
+
       - label: Year
         name: year
         widget: string

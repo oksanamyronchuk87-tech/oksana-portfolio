@@ -10,7 +10,8 @@ export type Category = {
   tone: 'dark' | 'ivory';
   // Optional filter tabs shown on the category page. A project picks one
   // with its `subcategory` field; projects without one appear under "All".
-  // Keep slugs in sync with the subcategory dropdown in cloudcannon.config.yml.
+  // Keep slugs in sync with the subcategory dropdowns in cloudcannon.config.yml
+  // and public/admin/config.yml.
   subcategories?: readonly Subcategory[];
 };
 
