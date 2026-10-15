@@ -1,7 +1,7 @@
 ---
 title: TOPFACE — Wear Your Dark Side
 description: 'Personal concept ad inspired by Topface lipstick — not a commissioned project. A cinematic gothic beauty film created entirely with AI: concept, character, editing, sound and packshot by me.'
-category: ai-video
+category: cgi-video
 subcategory: commercial
 year: '2026'
 coverImage: /uploads/Topface_cover.webp
