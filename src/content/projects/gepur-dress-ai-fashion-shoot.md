@@ -4,7 +4,7 @@ description: Personal non-commercial project. I transferred a dress and shoes fr
 category: fashion
 subcategory: photo
 year: '2026'
-coverImage: /uploads/cover_C.webp
+coverImage: /uploads/gepur-cover-site.webp
 coverOrientation: portrait
 gallery:
   - image: /uploads/IMG_2572.webp
